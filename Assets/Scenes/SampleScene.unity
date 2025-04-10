@@ -352,9 +352,9 @@ GameObject:
   - component: {fileID: 1716178232}
   - component: {fileID: 1716178231}
   - component: {fileID: 1716178230}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -667,6 +667,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f3658470e24c1e40b04672a57d9755a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpForce: 7
+  groundCheck: {fileID: 1936083170}
+  groundCheckRadius: 0.5
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
