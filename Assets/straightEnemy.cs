@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class groundEnemy : MonoBehaviour
+public class straightEnemy : MonoBehaviour
 {
-  [SerializeField] private float moveSpeed;
+   [SerializeField] private float moveSpeed;
     private bool leftOrRight;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,8 +27,15 @@ public class groundEnemy : MonoBehaviour
 
         }
    
-             if(transform.position.x < -15 || transform.position.x > 15){
+             if(transform.position.x < -30 || transform.position.x > 30){
             Destroy(gameObject);
+        }
+    }
+        private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+              Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
         }
     }
 }
