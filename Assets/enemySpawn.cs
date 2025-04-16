@@ -6,7 +6,7 @@ public class enemySpawn : MonoBehaviour
     [SerializeField] private GameObject goblin;
     [SerializeField] private GameObject bird;
     [SerializeField] private float spawnRate = 1;
-    public float timer = 3;
+    private float timer = 10;
     private GameObject[] spawnableObjects;
 
      void Start(){

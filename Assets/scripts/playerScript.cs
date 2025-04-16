@@ -6,7 +6,8 @@ public class playerScript : MonoBehaviour
     private bool isGrounded;
     private bool wasGrounded;
     public int jumpsRemaining = 2;
-
+    
+    [SerializeField] private Canvas gameOverCanvas;
     [SerializeField] private float forceAmount = 10f;
     [SerializeField] private float jumpForce;
     [SerializeField] private Transform groundCheck;
@@ -83,6 +84,13 @@ public class playerScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
+            gameOver();
+
         }
     }
+    private void gameOver(){
+    gameOverCanvas.gameObject.SetActive(true);
+
+    }
+    
     }
