@@ -46,5 +46,4 @@ public class straightEnemy : MonoBehaviour
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
         }
     }
-
 }

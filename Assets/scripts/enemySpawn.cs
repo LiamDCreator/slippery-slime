@@ -9,23 +9,27 @@ public class enemySpawn : MonoBehaviour
     private float timer = 10;
     private GameObject[] spawnableObjects;
 
-     void Start(){
-   spawnableObjects = new GameObject[] { adventurer, goblin, bird };
+    void Start()
+    {
+        spawnableObjects = new GameObject[] { adventurer, goblin, bird };
     }
-    
+
 
     // Update is called once per frame
-        void Update()
+    void Update()
     {
-         if(timer < spawnRate){
+        if (timer < spawnRate)
+        {
 
             timer = timer + Time.deltaTime;
-        } else {
-           spawnObject();
+        }
+        else
+        {
+            spawnObject();
             timer = 0;
         }
     }
-      void spawnObject()
+    void spawnObject()
     {
         Instantiate(spawnableObjects[Random.Range(0, spawnableObjects.Length)], transform.position, transform.rotation);
 
