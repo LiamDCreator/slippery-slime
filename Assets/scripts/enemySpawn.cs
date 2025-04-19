@@ -5,13 +5,15 @@ public class enemySpawn : MonoBehaviour
     [SerializeField] private GameObject adventurer;
     [SerializeField] private GameObject goblin;
     [SerializeField] private GameObject bird;
+    [SerializeField] private GameObject dragon;
+
     [SerializeField] private float spawnRate = 1;
     private float timer = 10;
     private GameObject[] spawnableObjects;
 
     void Start()
     {
-        spawnableObjects = new GameObject[] { adventurer, goblin, bird };
+        spawnableObjects = new GameObject[] { adventurer, goblin, bird, dragon };
     }
 
 

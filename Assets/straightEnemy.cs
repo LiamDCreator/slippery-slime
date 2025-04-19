@@ -4,8 +4,8 @@ public class straightEnemy : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
     private bool leftOrRight;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    private void Start()
     {
         if (transform.position.x > 0)
         {
@@ -18,7 +18,7 @@ public class straightEnemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         move();
     }
