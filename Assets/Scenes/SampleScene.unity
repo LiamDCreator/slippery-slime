@@ -825,7 +825,7 @@ MonoBehaviour:
   goblin: {fileID: 2436109264180600488, guid: afa858fa31f1eb348a770ebf164327d0, type: 3}
   bird: {fileID: 5162445023047082162, guid: 44af2b7224a1d50499ef7ae09c077ce5, type: 3}
   dragon: {fileID: 5162445023047082162, guid: 53ef8693301df6945bed3731b7ffd540, type: 3}
-  spawnRate: 2.5
+  spawnRate: 4
 --- !u!4 &1648974252
 Transform:
   m_ObjectHideFlags: 0
@@ -1036,7 +1036,7 @@ MonoBehaviour:
   goblin: {fileID: 2436109264180600488, guid: afa858fa31f1eb348a770ebf164327d0, type: 3}
   bird: {fileID: 5162445023047082162, guid: 44af2b7224a1d50499ef7ae09c077ce5, type: 3}
   dragon: {fileID: 5162445023047082162, guid: 53ef8693301df6945bed3731b7ffd540, type: 3}
-  spawnRate: 2.5
+  spawnRate: 4
 --- !u!4 &1859295027
 Transform:
   m_ObjectHideFlags: 0
