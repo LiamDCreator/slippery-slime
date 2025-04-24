@@ -5,6 +5,7 @@ public class playerScript : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded;
     private bool wasGrounded;
+    private bool canfastFall;
     public int jumpsRemaining = 2;
 
     [SerializeField] private float forceAmount = 10f;
@@ -21,13 +22,14 @@ public class playerScript : MonoBehaviour
 
     void Update()
     {
-        playerJump();  // input checking here is fine
+        playerJump();
         playerDash();
+        playerFastFall();
     }
 
     void FixedUpdate()
     {
-        CheckGrounded(); // physics check in FixedUpdate
+        CheckGrounded();
     }
 
     private void CheckGrounded()
@@ -39,6 +41,7 @@ public class playerScript : MonoBehaviour
         if (!wasGrounded && isGrounded)
         {
             jumpsRemaining = 2;
+            canfastFall = true;
         }
     }
 
@@ -77,6 +80,16 @@ public class playerScript : MonoBehaviour
                 rb.AddForce((Vector2.right + Vector2.up).normalized * forceAmount, ForceMode2D.Impulse);
                 jumpsRemaining--;
             }
+        }
+    }
+    private void playerFastFall()
+    {
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            rb.AddForce((Vector2.down).normalized * forceAmount, ForceMode2D.Impulse);
+            canfastFall = false;
+            Debug.Log("Yuuuup");
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

@@ -2,38 +2,31 @@ using UnityEngine;
 
 public class enemySpawn : MonoBehaviour
 {
-    [SerializeField] private GameObject adventurer;
-    [SerializeField] private GameObject goblin;
-    [SerializeField] private GameObject bird;
-    [SerializeField] private GameObject dragon;
+    [SerializeField] private GameObject[] spawnableObjects; // Array of spawnable objects
+    [SerializeField] private float spawnRate = 1f; // Time between spawns
+    private float timer = 0f;
 
-    [SerializeField] private float spawnRate = 1;
-    private float timer = 10;
-    private GameObject[] spawnableObjects;
-
-    void Start()
-    {
-        spawnableObjects = new GameObject[] { adventurer, goblin, bird, dragon };
-    }
-
-
-    // Update is called once per frame
     void Update()
     {
-        if (timer < spawnRate)
-        {
+        timer += Time.deltaTime;
 
-            timer = timer + Time.deltaTime;
-        }
-        else
+        if (timer >= spawnRate)
         {
-            spawnObject();
-            timer = 0;
+            SpawnObject();
+            timer = 0f;
         }
     }
-    void spawnObject()
-    {
-        Instantiate(spawnableObjects[Random.Range(0, spawnableObjects.Length)], transform.position, transform.rotation);
 
+    void SpawnObject()
+    {
+        if (spawnableObjects.Length > 0)
+        {
+            // Spawn a random object from the array
+            Instantiate(
+                spawnableObjects[Random.Range(0, spawnableObjects.Length)],
+                transform.position,
+                transform.rotation
+            );
+        }
     }
 }
