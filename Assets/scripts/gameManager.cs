@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class gameManager : MonoBehaviour
 {
-    [SerializeField] private int score = 0;
+    public int score = 0;
     [SerializeField] private Text scoreText;
 
     // Method to increment the score

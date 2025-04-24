@@ -1,18 +1,18 @@
 using UnityEngine;
 
 public class playerScript : MonoBehaviour
-{ 
+{
     private Rigidbody2D rb;
     private bool isGrounded;
     private bool wasGrounded;
     public int jumpsRemaining = 2;
-    
-    [SerializeField] private Canvas gameOverCanvas;
+
     [SerializeField] private float forceAmount = 10f;
     [SerializeField] private float jumpForce;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.3f;
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] private gameOverScreenScript gameOverScreen;
 
     void Start()
     {
@@ -72,25 +72,21 @@ public class playerScript : MonoBehaviour
                 rb.AddForce((Vector2.left + Vector2.up).normalized * forceAmount, ForceMode2D.Impulse);
                 jumpsRemaining--;
             }
-             if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 rb.AddForce((Vector2.right + Vector2.up).normalized * forceAmount, ForceMode2D.Impulse);
                 jumpsRemaining--;
             }
         }
     }
-          private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
-            gameOver();
+            gameOverScreen.gameOver();
 
         }
     }
-    private void gameOver(){
-    gameOverCanvas.gameObject.SetActive(true);
 
-    }
-    
-    }
+}

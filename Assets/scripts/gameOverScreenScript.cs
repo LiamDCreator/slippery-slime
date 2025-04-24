@@ -5,19 +5,30 @@ using UnityEngine.SceneManagement;
 public class gameOverScreenScript : MonoBehaviour
 {
   public Button restartGameButton;
+  [SerializeField] private Canvas gameOverCanvas;
+
+  [SerializeField] private Text finalScoreText;
+  [SerializeField] private gameManager gameManager;
 
 
-  // Start is called once before the first execution of Update after the MonoBehaviour is created
+
   void Start()
   {
     Button btn = restartGameButton.GetComponent<Button>();
     btn.onClick.AddListener(restartGame);
   }
+  public void gameOver()
+  {
+    finalScoreText.text = "Score: " + gameManager.score;
 
+    gameOverCanvas.gameObject.SetActive(true);
+
+  }
   void restartGame()
   {
     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
   }
+
 
 }
