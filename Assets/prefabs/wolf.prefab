@@ -15,9 +15,8 @@ GameObject:
   - component: {fileID: 7388386639557870040}
   - component: {fileID: 7036803030302411715}
   - component: {fileID: 8047260060408715343}
-  - component: {fileID: 6871076899495374706}
   m_Layer: 0
-  m_Name: skeletonEnemy
+  m_Name: wolf
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,18 +225,6 @@ BoxCollider2D:
   m_Size: {x: 0.03248971, y: 6.0464177}
   m_EdgeRadius: 0
 --- !u!114 &8047260060408715343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8466703846465290599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4f240ebac98f8849a34b63435693263, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6871076899495374706
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

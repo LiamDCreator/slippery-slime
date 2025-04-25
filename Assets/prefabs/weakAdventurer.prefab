@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1405786431126284791}
   - component: {fileID: 1888388518191600639}
   - component: {fileID: 2035694289137983615}
-  - component: {fileID: -4522683192672109756}
   m_Layer: 0
   m_Name: weakAdventurer
   m_TagString: Enemy
@@ -226,18 +225,6 @@ BoxCollider2D:
   m_Size: {x: 0.03248971, y: 6.0464177}
   m_EdgeRadius: 0
 --- !u!114 &2035694289137983615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4092486558041709694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4f240ebac98f8849a34b63435693263, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-4522683192672109756
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

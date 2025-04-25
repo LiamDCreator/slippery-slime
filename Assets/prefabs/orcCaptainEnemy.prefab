@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7342255009210854920}
   - component: {fileID: 1329417121980354122}
   - component: {fileID: 8295712586589094631}
-  - component: {fileID: 1177363470141820360}
+  - component: {fileID: 4897319399417095788}
   m_Layer: 0
   m_Name: orcCaptainEnemy
   m_TagString: Enemy
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4f240ebac98f8849a34b63435693263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1177363470141820360
+--- !u!114 &4897319399417095788
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -246,6 +246,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6799166823299883381}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4f240ebac98f8849a34b63435693263, type: 3}
+  m_Script: {fileID: 11500000, guid: 2dc0617e17daf0445b19abb0bab3c71b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
