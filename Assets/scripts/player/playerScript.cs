@@ -85,7 +85,7 @@ public class playerScript : MonoBehaviour
     private void playerFastFall()
     {
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) && canfastFall == true)
         {
             rb.AddForce((Vector2.down).normalized * forceAmount, ForceMode2D.Impulse);
             canfastFall = false;
