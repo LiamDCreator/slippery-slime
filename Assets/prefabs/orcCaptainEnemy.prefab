@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3080179420918579318}
   - component: {fileID: 2379539912870960972}
   - component: {fileID: 6817554792210574307}
-  - component: {fileID: 7342255009210854920}
   - component: {fileID: 1329417121980354122}
   - component: {fileID: 8295712586589094631}
   - component: {fileID: 4897319399417095788}
@@ -166,19 +165,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7342255009210854920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6799166823299883381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c86e35d931e1f1c409b9d227b4f67c75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 1.4
 --- !u!61 &1329417121980354122
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -249,3 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc0617e17daf0445b19abb0bab3c71b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 1.4
+  minimumWalkTime: 3
+  maximumWalkTime: 10
+  minimumStandStillTime: 1.5
+  maximumStandStillTime: 3

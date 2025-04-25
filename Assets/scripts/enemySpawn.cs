@@ -4,7 +4,7 @@ public class enemySpawn : MonoBehaviour
 {
     [SerializeField] private GameObject[] spawnableObjects; // Array of spawnable objects
     [SerializeField] private float spawnRate = 1f; // Time between spawns
-    private float timer = 0f;
+    private float timer = 100f;
 
     void Update()
     {
