@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class straightEnemy : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
+    public float moveSpeed;
+    public float originalmovespeed;
 
     void Start()
     {
@@ -15,9 +16,9 @@ public class straightEnemy : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 0, 0); // Face right
         }
-
+        originalmovespeed = moveSpeed;
         // Ignore collisions with other enemies
-        IgnoreEnemyCollisions();
+        // IgnoreEnemyCollisions();
     }
 
     void Update()
@@ -32,17 +33,9 @@ public class straightEnemy : MonoBehaviour
         }
     }
 
-    private void IgnoreEnemyCollisions()
+    public void stopEnemy()
     {
-        Collider2D[] allEnemies = FindObjectsOfType<Collider2D>();
-        Collider2D thisCollider = GetComponent<Collider2D>();
-
-        foreach (Collider2D enemyCollider in allEnemies)
-        {
-            if (enemyCollider != thisCollider && enemyCollider.CompareTag("Enemy"))
-            {
-                Physics2D.IgnoreCollision(thisCollider, enemyCollider);
-            }
-        }
+        originalmovespeed = moveSpeed;
+        moveSpeed = 0;
     }
 }

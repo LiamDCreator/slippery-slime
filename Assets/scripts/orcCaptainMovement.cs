@@ -5,12 +5,13 @@ public class orcCaptainMovement : MonoBehaviour
 {
     private float timer;
     private float standStillRate;
+    public straightEnemy straightEnemy; // Reference to the straightEnemy script
+
 
 
     private bool isStandingStill = false;
 
     private bool leftOrRight;
-    [SerializeField] private float moveSpeed;
     [SerializeField] private float standStillDelay;
 
     [SerializeField] private float minimumWalkTime;
@@ -44,7 +45,7 @@ public class orcCaptainMovement : MonoBehaviour
     {
         if (!isStandingStill) // Only move if not standing still
         {
-            move();
+
 
             timer += Time.deltaTime;
 
@@ -55,30 +56,7 @@ public class orcCaptainMovement : MonoBehaviour
         }
     }
 
-    private void move()
-    {
-        if (leftOrRight)
-        {
-            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
-        }
-        else
-        {
-            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
-        }
 
-        if (transform.position.x < -30 || transform.position.x > 30)
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
-        }
-    }
 
     private IEnumerator RandomlyStandStill()
     {
@@ -95,6 +73,7 @@ public class orcCaptainMovement : MonoBehaviour
         yield return new WaitForSeconds(standStillDelay);
         isStandingStill = true;
 
+        straightEnemy.moveSpeed = 0;
         // Log standing still and wait for a random amount of time
         Debug.Log("Standing still...");
         float standStillTime = Random.Range(minimumStandStillTime, maximumStandStillTime);
@@ -102,6 +81,7 @@ public class orcCaptainMovement : MonoBehaviour
 
         // Reset timer and resume movement
         Debug.Log("Resuming movement...");
+        straightEnemy.moveSpeed = straightEnemy.originalmovespeed;
         timer = 0f;
         standStillRate = Random.Range(minimumWalkTime, maximumWalkTime);
         isStandingStill = false;
