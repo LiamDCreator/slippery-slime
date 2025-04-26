@@ -236,7 +236,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1.4
+  standStillDelay: 0.5
   minimumWalkTime: 3
   maximumWalkTime: 10
   minimumStandStillTime: 1.5
   maximumStandStillTime: 3
+  prepareStandStillColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}

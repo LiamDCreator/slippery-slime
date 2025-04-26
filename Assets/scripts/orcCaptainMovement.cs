@@ -6,14 +6,20 @@ public class orcCaptainMovement : MonoBehaviour
     private float timer;
     private float standStillRate;
 
+
     private bool isStandingStill = false;
 
     private bool leftOrRight;
     [SerializeField] private float moveSpeed;
+    [SerializeField] private float standStillDelay;
+
     [SerializeField] private float minimumWalkTime;
     [SerializeField] private float maximumWalkTime;
     [SerializeField] private float minimumStandStillTime = 1f; // Minimum time to stand still
     [SerializeField] private float maximumStandStillTime = 3f; // Maximum time to stand still
+    [SerializeField] private Color prepareStandStillColor = Color.yellow; // Color during prepare to stand still
+    private Color originalColor; // To store the original color of the GameObject
+    private SpriteRenderer spriteRenderer; // Reference to the SpriteRenderer
 
     void Start()
     {
@@ -26,6 +32,12 @@ public class orcCaptainMovement : MonoBehaviour
             leftOrRight = false;
         }
         standStillRate = Random.Range(minimumWalkTime, maximumWalkTime);
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
+        {
+            originalColor = spriteRenderer.color; // Store the original color
+        }
     }
 
     void Update()
@@ -70,6 +82,17 @@ public class orcCaptainMovement : MonoBehaviour
 
     private IEnumerator RandomlyStandStill()
     {
+
+
+        // Change the color of the GameObject to indicate preparing to stand still
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = prepareStandStillColor;
+        }
+
+        // Wait for 0.5 seconds before standing still
+        Debug.Log("Preparing to stand still...");
+        yield return new WaitForSeconds(standStillDelay);
         isStandingStill = true;
 
         // Log standing still and wait for a random amount of time
@@ -82,5 +105,11 @@ public class orcCaptainMovement : MonoBehaviour
         timer = 0f;
         standStillRate = Random.Range(minimumWalkTime, maximumWalkTime);
         isStandingStill = false;
+
+        // Reset the color back to the original
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = originalColor;
+        }
     }
 }
