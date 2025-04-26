@@ -3,47 +3,46 @@ using UnityEngine;
 public class straightEnemy : MonoBehaviour
 {
     [SerializeField] private float moveSpeed;
-    private bool leftOrRight;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
+        // Rotate the enemy to face the correct direction based on its spawn position
         if (transform.position.x > 0)
         {
-            leftOrRight = true;
+            transform.rotation = Quaternion.Euler(0, 180, 0); // Face left
         }
-        else if (transform.position.x < 0)
+        else
         {
-            leftOrRight = false;
+            transform.rotation = Quaternion.Euler(0, 0, 0); // Face right
         }
+
+        // Ignore collisions with other enemies
+        IgnoreEnemyCollisions();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        move();
-    }
-    private void move()
-    {
-        if (leftOrRight == true)
-        {
-            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
-        }
-        else if (leftOrRight == false)
-        {
-            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+        // Move the enemy forward based on its current rotation
+        transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
 
-        }
-
+        // Destroy the enemy if it moves out of bounds
         if (transform.position.x < -30 || transform.position.x > 30)
         {
             Destroy(gameObject);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void IgnoreEnemyCollisions()
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        Collider2D[] allEnemies = FindObjectsOfType<Collider2D>();
+        Collider2D thisCollider = GetComponent<Collider2D>();
+
+        foreach (Collider2D enemyCollider in allEnemies)
         {
-            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
+            if (enemyCollider != thisCollider && enemyCollider.CompareTag("Enemy"))
+            {
+                Physics2D.IgnoreCollision(thisCollider, enemyCollider);
+            }
         }
     }
 }

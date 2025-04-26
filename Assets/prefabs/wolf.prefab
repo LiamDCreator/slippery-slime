@@ -249,6 +249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f52e36b5b034344ca897e9c1d71b447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpDelay: 0.5
   jumpForce: 7
   minimumJumpRate: 2
   maximumJumpRate: 5
+  prepareJumpColor: {r: 1, g: 0, b: 0, a: 1}
