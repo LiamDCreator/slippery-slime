@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7388386639557870040}
   - component: {fileID: 7036803030302411715}
   - component: {fileID: 8047260060408715343}
+  - component: {fileID: 3987152178829602830}
   m_Layer: 0
   m_Name: wolf
   m_TagString: Enemy
@@ -177,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86e35d931e1f1c409b9d227b4f67c75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 3
 --- !u!61 &7036803030302411715
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -236,3 +237,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4f240ebac98f8849a34b63435693263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3987152178829602830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466703846465290599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f52e36b5b034344ca897e9c1d71b447, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 7
+  minimumJumpRate: 2
+  maximumJumpRate: 5
