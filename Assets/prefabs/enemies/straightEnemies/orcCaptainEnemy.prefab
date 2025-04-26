@@ -273,7 +273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   straightEnemy: {fileID: -5985510428470047006}
   faction: 0
-  strength: 300
+  strength: 50
   isFighting: 0
 --- !u!61 &1522632502984038087
 BoxCollider2D:

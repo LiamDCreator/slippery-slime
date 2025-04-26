@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 1910970870058246748}
   - component: {fileID: -1052117077213565970}
   m_Layer: 8
-  m_Name: orcEnemy 1
+  m_Name: orcEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   straightEnemy: {fileID: 8015724085568615752}
   faction: 0
-  strength: 15
+  strength: 8
   isFighting: 0
 --- !u!61 &-1052117077213565970
 BoxCollider2D:
