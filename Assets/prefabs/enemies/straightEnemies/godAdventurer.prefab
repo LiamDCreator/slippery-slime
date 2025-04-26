@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2035694289137983615}
   - component: {fileID: 6913596427070223219}
   - component: {fileID: -6199297111160221254}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: godAdventurer
   m_TagString: Enemy
   m_Icon: {fileID: 0}

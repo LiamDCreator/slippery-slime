@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2035694289137983615}
   - component: {fileID: 2152154446802789649}
   - component: {fileID: 5358830286939038230}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: weakAdventurer
   m_TagString: Enemy
   m_Icon: {fileID: 0}
