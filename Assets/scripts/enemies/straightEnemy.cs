@@ -35,7 +35,7 @@ public class straightEnemy : MonoBehaviour
 
     public void stopEnemy()
     {
-        originalmovespeed = moveSpeed;
+
         moveSpeed = 0;
     }
 }
