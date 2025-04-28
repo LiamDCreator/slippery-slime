@@ -14,18 +14,18 @@ public class EnemyBase : MonoBehaviour
     public int strength;
     public bool isFighting = false;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        EnemyBase other = collision.gameObject.GetComponent<EnemyBase>();
 
-
-        EnemyBase other = collision.GetComponent<EnemyBase>();
-
+        // Ignore collisions with enemies of the same faction
         if (other != null && other.faction == faction)
         {
-            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision);
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
             return; // Exit the method to avoid further processing
         }
 
+        // Start a fight if the factions are different and neither is already fighting
         if (other != null && other.faction != faction && !isFighting && !other.isFighting)
         {
             StartCoroutine(HandleFight(other));
@@ -47,6 +47,30 @@ public class EnemyBase : MonoBehaviour
             other.straightEnemy.stopEnemy();
         }
 
+        Collider2D thisCollider = GetComponent<Collider2D>();
+        Collider2D otherCollider = other.GetComponent<Collider2D>();
+
+        Rigidbody2D thisRigidbody = GetComponent<Rigidbody2D>();
+        Rigidbody2D otherRigidbody = other.GetComponent<Rigidbody2D>();
+
+        // Disable colliders and set gravity scale to 0
+        if (thisCollider != null)
+        {
+            thisCollider.enabled = false;
+        }
+        if (otherCollider != null)
+        {
+            otherCollider.enabled = false;
+        }
+        if (thisRigidbody != null)
+        {
+            thisRigidbody.gravityScale = 0;
+        }
+        if (otherRigidbody != null)
+        {
+            otherRigidbody.gravityScale = 0;
+        }
+
         // Start fight animation here
         PlayFightAnimation();
 
@@ -62,6 +86,24 @@ public class EnemyBase : MonoBehaviour
         {
             Destroy(this.gameObject);
             other.isFighting = false; // Reset isFighting for the winner
+        }
+
+        // Re-enable colliders and restore gravity scale
+        if (thisCollider != null)
+        {
+            thisCollider.enabled = true;
+        }
+        if (otherCollider != null)
+        {
+            otherCollider.enabled = true;
+        }
+        if (thisRigidbody != null)
+        {
+            thisRigidbody.gravityScale = 1;
+        }
+        if (otherRigidbody != null)
+        {
+            otherRigidbody.gravityScale = 1;
         }
 
         // Reset movement speed for the winner

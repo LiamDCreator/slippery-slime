@@ -4,6 +4,7 @@ using System.Collections;
 public class wolfJumpScript : MonoBehaviour
 {
     private Rigidbody2D rb;
+    public EnemyBase EnemyBase;
 
     private float jumpRate;
     [SerializeField] private float jumpDelay;

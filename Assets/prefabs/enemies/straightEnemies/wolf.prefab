@@ -252,6 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f52e36b5b034344ca897e9c1d71b447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyBase: {fileID: 4182911160472910623}
   jumpDelay: 0.5
   jumpForce: 7
   minimumJumpRate: 2
