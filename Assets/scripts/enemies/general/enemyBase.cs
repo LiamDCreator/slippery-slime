@@ -16,16 +16,16 @@ public class EnemyBase : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+
         EnemyBase other = collision.GetComponent<EnemyBase>();
 
-        // Ignore collisions with enemies of the same faction
         if (other != null && other.faction == faction)
         {
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision);
             return; // Exit the method to avoid further processing
         }
 
-        // Start a fight if the factions are different and neither is already fighting
         if (other != null && other.faction != faction && !isFighting && !other.isFighting)
         {
             StartCoroutine(HandleFight(other));
@@ -46,10 +46,6 @@ public class EnemyBase : MonoBehaviour
         {
             other.straightEnemy.stopEnemy();
         }
-
-        // Ignore all collisions for both enemies during the fight
-        int enemyLayer = gameObject.layer;
-        Physics2D.IgnoreLayerCollision(enemyLayer, enemyLayer, true);
 
         // Start fight animation here
         PlayFightAnimation();
@@ -77,9 +73,6 @@ public class EnemyBase : MonoBehaviour
         {
             other.straightEnemy.moveSpeed = other.straightEnemy.originalmovespeed;
         }
-
-        // Re-enable collisions for the layer after the fight
-        Physics2D.IgnoreLayerCollision(enemyLayer, enemyLayer, false);
     }
 
     private void PlayFightAnimation()
