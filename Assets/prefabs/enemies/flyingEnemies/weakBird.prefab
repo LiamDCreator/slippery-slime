@@ -17,9 +17,9 @@ GameObject:
   - component: {fileID: 5933987946629928790}
   - component: {fileID: -5814219874371231308}
   - component: {fileID: 7653167529357129900}
-  - component: {fileID: -8770452350974370702}
+  - component: {fileID: -2230079827601366121}
   m_Layer: 0
-  m_Name: birdEnemy
+  m_Name: weakBird
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +35,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.16, y: 0.15, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -300,7 +300,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-8770452350974370702
+--- !u!114 &-2230079827601366121
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -309,10 +309,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5162445023047082162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3d38f5b647f98a418e162a16be37900, type: 3}
+  m_Script: {fileID: 11500000, guid: c519f76383a5ed54d823482eb5e9975e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  straightEnemy: {fileID: 4307492046252261540}
-  faction: 1
-  strength: 5
-  isFighting: 0
