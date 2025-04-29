@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: cd8313fd8132ddc47bd77cab7db5259b
+guid: cdf97a5b96304d04abb637ca070e582b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5921101454265523386
-    second: slippery slime sprites_0
+      213: 2632873553030453234
+    second: FinalSprites slippery slime_0
+  - first:
+      213: -7214018657693851232
+    second: FinalSprites slippery slime_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: slippery slime sprites_0
+      name: FinalSprites slippery slime_0
       rect:
         serializedVersion: 2
-        x: 480
-        y: 560
-        width: 80
-        height: 55
+        x: 319
+        y: 639
+        width: 82
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 481ea310d77a4f74c89c69d767e908c7
-      internalID: -896753133
+      spriteID: 2f796e20c88d98420800000000000000
+      internalID: 2632873553030453234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalSprites slippery slime_1
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 644
+        width: 82
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a12e199048a2eb90800000000000000
+      internalID: -7214018657693851232
       vertices: []
       indices: 
       edges: []
@@ -125,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b0a9207648b37ba459d4a4a55a2da6d3
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -134,8 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      slippery slime sprites_0: -896753133
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
