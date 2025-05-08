@@ -36,12 +36,20 @@ public class wolfJumpScript : MonoBehaviour
             // Wait for the prepare jump time
             yield return new WaitForSeconds(jumpRate - jumpDelay);
 
-            prepareJump();
+            // Check if the wolf is fighting before preparing to jump
+            if (!EnemyBase.isFighting)
+            {
+                prepareJump();
 
-            // Wait for the jump delay
-            yield return new WaitForSeconds(jumpDelay);
+                // Wait for the jump delay
+                yield return new WaitForSeconds(jumpDelay);
 
-            jump();
+                // Jump only if not fighting
+                if (!EnemyBase.isFighting)
+                {
+                    jump();
+                }
+            }
 
             // Reset the jump rate for the next jump
             jumpRate = Random.Range(minimumJumpRate, maximumJumpRate);
