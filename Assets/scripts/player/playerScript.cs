@@ -51,6 +51,8 @@ public class playerScript : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce); // fixed to velocity
             jumpsRemaining--;
+
+            audioManager.Instance.PlaySFX(audioManager.Instance.jumpSFX);
         }
     }
 
@@ -58,27 +60,22 @@ public class playerScript : MonoBehaviour
     {
         if (jumpsRemaining <= 1 && jumpsRemaining > 0)
         {
+            Vector2 dashDirection = Vector2.zero;
+
             if (Input.GetKeyDown(KeyCode.D))
-            {
-                rb.AddForce(Vector2.right * forceAmount, ForceMode2D.Impulse);
-                jumpsRemaining--;
-            }
+                dashDirection = Vector2.right;
+            else if (Input.GetKeyDown(KeyCode.A))
+                dashDirection = Vector2.left;
+            else if (Input.GetKeyDown(KeyCode.Q))
+                dashDirection = (Vector2.left + Vector2.up).normalized;
+            else if (Input.GetKeyDown(KeyCode.E))
+                dashDirection = (Vector2.right + Vector2.up).normalized;
 
-            if (Input.GetKeyDown(KeyCode.A))
+            if (dashDirection != Vector2.zero)
             {
-                rb.AddForce(Vector2.left * forceAmount, ForceMode2D.Impulse);
+                rb.AddForce(dashDirection * forceAmount, ForceMode2D.Impulse);
                 jumpsRemaining--;
-            }
-
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                rb.AddForce((Vector2.left + Vector2.up).normalized * forceAmount, ForceMode2D.Impulse);
-                jumpsRemaining--;
-            }
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                rb.AddForce((Vector2.right + Vector2.up).normalized * forceAmount, ForceMode2D.Impulse);
-                jumpsRemaining--;
+                audioManager.Instance.PlaySFX(audioManager.Instance.dashSFX);
             }
         }
     }
@@ -90,6 +87,8 @@ public class playerScript : MonoBehaviour
             rb.AddForce((Vector2.down).normalized * forceAmount, ForceMode2D.Impulse);
             canfastFall = false;
             Debug.Log("Yuuuup");
+            audioManager.Instance.PlaySFX(audioManager.Instance.downDashSFX);
+
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
