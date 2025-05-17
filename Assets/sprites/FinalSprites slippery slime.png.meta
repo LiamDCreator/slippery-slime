@@ -106,8 +106,8 @@ TextureImporter:
       name: FinalSprites slippery slime_0
       rect:
         serializedVersion: 2
-        x: 320
-        y: 640
+        x: 30
+        y: 1120
         width: 80
         height: 55
       alignment: 0
@@ -128,8 +128,8 @@ TextureImporter:
       name: FinalSprites slippery slime_1
       rect:
         serializedVersion: 2
-        x: 480
-        y: 640
+        x: 160
+        y: 1120
         width: 90
         height: 105
       alignment: 0
@@ -150,8 +150,8 @@ TextureImporter:
       name: FinalSprites slippery slime_2
       rect:
         serializedVersion: 2
-        x: 615
-        y: 645
+        x: 320
+        y: 1120
         width: 80
         height: 95
       alignment: 0
@@ -172,8 +172,8 @@ TextureImporter:
       name: FinalSprites slippery slime_3
       rect:
         serializedVersion: 2
-        x: 735
-        y: 640
+        x: 480
+        y: 1120
         width: 100
         height: 155
       alignment: 0
@@ -194,8 +194,8 @@ TextureImporter:
       name: FinalSprites slippery slime_4
       rect:
         serializedVersion: 2
-        x: 900
-        y: 645
+        x: 640
+        y: 1120
         width: 90
         height: 145
       alignment: 0
@@ -208,6 +208,116 @@ TextureImporter:
       bones: []
       spriteID: c54d78107f098694c98200399d56831d
       internalID: 768093182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalSprites slippery slime_5
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1115
+        width: 100
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb24cad0b0d79b6448c696c18abf175a
+      internalID: 450204676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalSprites slippery slime_6
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1120
+        width: 90
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46066a7726871c94fbadfe2ab4476866
+      internalID: -2084058234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalSprites slippery slime_7
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 1115
+        width: 100
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb90c7921b524ab43ae24f773a99022e
+      internalID: 1831109318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalSprites slippery slime_8
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 880
+        width: 90
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f93dea5f96600249a906bd21aa5c1e5
+      internalID: 1828358358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalSprites slippery slime_9
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 880
+        width: 140
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8535cc6a40a378647b255ea930750246
+      internalID: -618927300
       vertices: []
       indices: 
       edges: []
@@ -231,6 +341,11 @@ TextureImporter:
       FinalSprites slippery slime_2: 1252738644
       FinalSprites slippery slime_3: 964627345
       FinalSprites slippery slime_4: 768093182
+      FinalSprites slippery slime_5: 450204676
+      FinalSprites slippery slime_6: -2084058234
+      FinalSprites slippery slime_7: 1831109318
+      FinalSprites slippery slime_8: 1828358358
+      FinalSprites slippery slime_9: -618927300
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

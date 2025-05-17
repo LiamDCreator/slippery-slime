@@ -14,6 +14,8 @@ public class EnemyBase : MonoBehaviour
     public int strength;
     public bool isFighting = false;
 
+    public GameObject fightingCloudPrefab; // Assign this in the Inspector
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         EnemyBase other = collision.gameObject.GetComponent<EnemyBase>();
@@ -71,10 +73,25 @@ public class EnemyBase : MonoBehaviour
             otherRigidbody.gravityScale = 0;
         }
 
+        // Instantiate fighting cloud above the two fighters
+        GameObject cloudInstance = null;
+        if (fightingCloudPrefab != null)
+        {
+            Vector3 center = (transform.position + other.transform.position) / 2f;
+            Vector3 cloudPos = center + Vector3.up * 0.5f; // Adjust 0.5f as needed for your visuals
+            cloudInstance = Instantiate(fightingCloudPrefab, cloudPos, Quaternion.identity);
+        }
+
         // Start fight animation here
         PlayFightAnimation();
 
         yield return new WaitForSeconds(1.5f); // Duration of the fight
+
+        // Destroy the cloud after the fight
+        if (cloudInstance != null)
+        {
+            Destroy(cloudInstance);
+        }
 
         // Determine the outcome of the fight
         if (strength >= other.strength)
