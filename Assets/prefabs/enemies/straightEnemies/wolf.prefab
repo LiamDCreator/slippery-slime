@@ -273,3 +273,4 @@ MonoBehaviour:
   faction: 0
   strength: 5
   isFighting: 0
+  fightingCloudPrefab: {fileID: 1369872676319256669, guid: 81fddd89064eb13498f74d5f545590c1, type: 3}

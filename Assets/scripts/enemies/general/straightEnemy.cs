@@ -37,5 +37,17 @@ public class straightEnemy : MonoBehaviour
     {
 
         moveSpeed = 0;
+        // Set y velocity to 0 to stop jumping/falling
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+        }
+
+        // Set the object's Y position to -3
+        Vector3 pos = transform.position;
+        pos.y = -3.2f;
+        transform.position = pos;
+
     }
 }

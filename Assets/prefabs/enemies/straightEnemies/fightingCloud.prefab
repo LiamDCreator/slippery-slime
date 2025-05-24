@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4988846211941760792}
   - component: {fileID: 1751673831955938893}
+  - component: {fileID: -5095569555424838965}
   m_Layer: 0
   m_Name: fightingCloud
   m_TagString: Untagged
@@ -87,3 +88,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-5095569555424838965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369872676319256669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c0fe3f618c63ce4eb4cfda75645b925, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
