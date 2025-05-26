@@ -11,6 +11,8 @@ public class sceneLoader : MonoBehaviour
         if (!string.IsNullOrEmpty(BasicLevel))
         {
             SceneManager.LoadScene(BasicLevel);
+            Time.timeScale = 1f;
+
         }
         else
         {

@@ -80,4 +80,5 @@ public class wolfJumpScript : MonoBehaviour
             spriteRenderer.color = originalColor;
         }
     }
+
 }
