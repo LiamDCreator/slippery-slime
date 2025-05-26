@@ -29,6 +29,11 @@ public class gameOverScreenScript : MonoBehaviour
     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
   }
+  public void mainMenu()
+  {
+    SceneManager.LoadScene("Main Menu");
+
+  }
 
 
 }

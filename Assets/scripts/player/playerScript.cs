@@ -22,6 +22,7 @@ public class playerScript : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f) return;
         playerJump();
         playerDash();
         playerFastFall();
