@@ -274,6 +274,8 @@ MonoBehaviour:
   faction: 0
   strength: 8
   isFighting: 0
+  minimumFightDuration: 1
+  maximumFightDuration: 5
   fightingCloudPrefab: {fileID: 1369872676319256669, guid: 81fddd89064eb13498f74d5f545590c1, type: 3}
 --- !u!1 &7614375476903958509
 GameObject:

@@ -13,6 +13,8 @@ public class EnemyBase : MonoBehaviour
     public Faction faction;
     public int strength;
     public bool isFighting = false;
+    [SerializeField] private float minimumFightDuration;
+    [SerializeField] private float maximumFightDuration;
 
     public GameObject fightingCloudPrefab; // Assign this in the Inspector
 
@@ -77,15 +79,45 @@ public class EnemyBase : MonoBehaviour
         GameObject cloudInstance = null;
         if (fightingCloudPrefab != null)
         {
-            Vector3 center = (transform.position + other.transform.position) / 2f;
-            Vector3 cloudPos = center + Vector3.up * 0.5f; // Adjust 0.5f as needed for your visuals
-            cloudInstance = Instantiate(fightingCloudPrefab, cloudPos, Quaternion.identity);
+            // Try to use the Renderer bounds for both enemies
+            Renderer rendA = GetComponentInChildren<Renderer>();
+            Renderer rendB = other.GetComponentInChildren<Renderer>();
+
+            if (rendA != null && rendB != null)
+            {
+                // Calculate the combined bounds
+                Bounds combinedBounds = rendA.bounds;
+                combinedBounds.Encapsulate(rendB.bounds);
+
+                // Center position for the cloud
+                Vector3 cloudPos = combinedBounds.center + Vector3.up * 0.1f; // Slightly above center if needed
+
+                // Instantiate the cloud
+                cloudInstance = Instantiate(fightingCloudPrefab, cloudPos, Quaternion.identity);
+
+                // Scale the cloud to cover both enemies, with padding
+                float padding = 1.2f; // Increase for more coverage
+                Vector3 newScale = new Vector3(
+                    combinedBounds.size.x * padding,
+                    combinedBounds.size.y * padding,
+                    1f
+                );
+                cloudInstance.transform.localScale = newScale;
+            }
+            else
+            {
+                // Fallback: use the old method if no renderer is found
+                Vector3 center = (transform.position + other.transform.position) / 2f;
+                Vector3 cloudPos = center + Vector3.up * 0.5f;
+                cloudInstance = Instantiate(fightingCloudPrefab, cloudPos, Quaternion.identity);
+            }
         }
 
         // Start fight animation here
         PlayFightAnimation();
+        float fightDuration = Random.Range(minimumFightDuration, maximumFightDuration);
 
-        yield return new WaitForSeconds(1.5f); // Duration of the fight
+        yield return new WaitForSeconds(fightDuration);
 
         // Destroy the cloud after the fight
         if (cloudInstance != null)
