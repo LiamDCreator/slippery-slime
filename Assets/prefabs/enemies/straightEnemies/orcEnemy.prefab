@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7159941832293976585}
   - component: {fileID: 570567265513194620}
-  - component: {fileID: 2882220784042010044}
-  - component: {fileID: 1358345249339747149}
   - component: {fileID: 8015724085568615752}
-  - component: {fileID: 7901331361948308408}
   - component: {fileID: 4197230875971787588}
-  - component: {fileID: 4517763736675262099}
   - component: {fileID: 1910970870058246748}
+  - component: {fileID: 4517763736675262099}
+  - component: {fileID: 1358345249339747149}
+  - component: {fileID: 2882220784042010044}
+  - component: {fileID: 7901331361948308408}
   m_Layer: 8
   m_Name: orcEnemy
   m_TagString: Enemy
@@ -95,6 +95,96 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8015724085568615752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3134314328056398605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c86e35d931e1f1c409b9d227b4f67c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1.5
+  originalmovespeed: 0
+--- !u!114 &4197230875971787588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3134314328056398605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f240ebac98f8849a34b63435693263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1910970870058246748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3134314328056398605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3d38f5b647f98a418e162a16be37900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  straightEnemy: {fileID: 8015724085568615752}
+  faction: 0
+  strength: 8
+  isFighting: 0
+  minimumFightDuration: 1
+  maximumFightDuration: 5
+  fightingCloudPrefab: {fileID: 1369872676319256669, guid: 81fddd89064eb13498f74d5f545590c1, type: 3}
+--- !u!114 &4517763736675262099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3134314328056398605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b8417cdc18e64849864f494bfe9d645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitbox: {fileID: 7614375476903958509}
+  attackDelay: 0.5
+  hitboxActiveTime: 0.5
+  minimumAttackRate: 2
+  maximumAttackRate: 5
+  prepareAttackColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!50 &1358345249339747149
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3134314328056398605}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &2882220784042010044
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -141,47 +231,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1.5}
   m_EdgeRadius: 0
---- !u!50 &1358345249339747149
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3134314328056398605}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &8015724085568615752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3134314328056398605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c86e35d931e1f1c409b9d227b4f67c75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 1.5
-  originalmovespeed: 0
 --- !u!61 &7901331361948308408
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -228,55 +277,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.03248971, y: 6.0464177}
   m_EdgeRadius: 0
---- !u!114 &4197230875971787588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3134314328056398605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4f240ebac98f8849a34b63435693263, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4517763736675262099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3134314328056398605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b8417cdc18e64849864f494bfe9d645, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitbox: {fileID: 7614375476903958509}
-  attackDelay: 0.5
-  hitboxActiveTime: 0.5
-  minimumAttackRate: 2
-  maximumAttackRate: 5
-  prepareAttackColor: {r: 1, g: 0, b: 0, a: 1}
---- !u!114 &1910970870058246748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3134314328056398605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3d38f5b647f98a418e162a16be37900, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  straightEnemy: {fileID: 8015724085568615752}
-  faction: 0
-  strength: 8
-  isFighting: 0
-  minimumFightDuration: 1
-  maximumFightDuration: 5
-  fightingCloudPrefab: {fileID: 1369872676319256669, guid: 81fddd89064eb13498f74d5f545590c1, type: 3}
 --- !u!1 &7614375476903958509
 GameObject:
   m_ObjectHideFlags: 0

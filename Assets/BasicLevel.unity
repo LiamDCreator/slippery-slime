@@ -3171,7 +3171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1648974251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3682,7 +3682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1859295026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3731,10 +3731,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1936083170}
   - component: {fileID: 1936083169}
-  - component: {fileID: 1936083168}
   - component: {fileID: 1936083171}
-  - component: {fileID: 1936083172}
   - component: {fileID: 1936083173}
+  - component: {fileID: 1936083172}
+  - component: {fileID: 1936083168}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player

@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 154715209846851143}
   - component: {fileID: 8035337712833643005}
-  - component: {fileID: 608079699181018548}
-  - component: {fileID: 3833081599224207381}
   - component: {fileID: 7388386639557870040}
-  - component: {fileID: 7036803030302411715}
   - component: {fileID: 8047260060408715343}
-  - component: {fileID: 3987152178829602830}
   - component: {fileID: 4182911160472910623}
+  - component: {fileID: 3987152178829602830}
+  - component: {fileID: 3833081599224207381}
+  - component: {fileID: 608079699181018548}
+  - component: {fileID: 7036803030302411715}
   m_Layer: 8
   m_Name: wolf
   m_TagString: Enemy
@@ -94,6 +94,96 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7388386639557870040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466703846465290599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c86e35d931e1f1c409b9d227b4f67c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  originalmovespeed: 0
+--- !u!114 &8047260060408715343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466703846465290599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f240ebac98f8849a34b63435693263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4182911160472910623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466703846465290599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3d38f5b647f98a418e162a16be37900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  straightEnemy: {fileID: 7388386639557870040}
+  faction: 0
+  strength: 5
+  isFighting: 0
+  minimumFightDuration: 1
+  maximumFightDuration: 5
+  fightingCloudPrefab: {fileID: 1369872676319256669, guid: 81fddd89064eb13498f74d5f545590c1, type: 3}
+--- !u!114 &3987152178829602830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466703846465290599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f52e36b5b034344ca897e9c1d71b447, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyBase: {fileID: 4182911160472910623}
+  jumpDelay: 0.5
+  jumpForce: 7
+  minimumJumpRate: 2
+  maximumJumpRate: 5
+  prepareJumpColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!50 &3833081599224207381
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8466703846465290599}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &608079699181018548
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -140,47 +230,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &3833081599224207381
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8466703846465290599}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &7388386639557870040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8466703846465290599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c86e35d931e1f1c409b9d227b4f67c75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
-  originalmovespeed: 0
 --- !u!61 &7036803030302411715
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -227,52 +276,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.03248971, y: 6.0464177}
   m_EdgeRadius: 0
---- !u!114 &8047260060408715343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8466703846465290599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4f240ebac98f8849a34b63435693263, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3987152178829602830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8466703846465290599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f52e36b5b034344ca897e9c1d71b447, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnemyBase: {fileID: 4182911160472910623}
-  jumpDelay: 0.5
-  jumpForce: 7
-  minimumJumpRate: 2
-  maximumJumpRate: 5
-  prepareJumpColor: {r: 1, g: 0, b: 0, a: 1}
---- !u!114 &4182911160472910623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8466703846465290599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3d38f5b647f98a418e162a16be37900, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  straightEnemy: {fileID: 7388386639557870040}
-  faction: 0
-  strength: 5
-  isFighting: 0
-  minimumFightDuration: 1
-  maximumFightDuration: 5
-  fightingCloudPrefab: {fileID: 1369872676319256669, guid: 81fddd89064eb13498f74d5f545590c1, type: 3}
