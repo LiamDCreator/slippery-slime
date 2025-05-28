@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 1078382836313690677}
   - component: {fileID: 1339579300274761976}
   - component: {fileID: 210699192981318942}
-  - component: {fileID: 1405786431126284791}
+  - component: {fileID: 883949324008964580}
   - component: {fileID: 1888388518191600639}
   - component: {fileID: 2035694289137983615}
   - component: {fileID: 6913596427070223219}
+  - component: {fileID: -1078443684516752165}
   m_Layer: 8
   m_Name: godAdventurer
   m_TagString: Enemy
@@ -166,7 +167,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1405786431126284791
+--- !u!114 &883949324008964580
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,10 +251,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d38f5b647f98a418e162a16be37900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  straightEnemy: {fileID: 1405786431126284791}
+  straightEnemy: {fileID: 0}
   faction: 1
   strength: 1000
   isFighting: 0
   minimumFightDuration: 1
   maximumFightDuration: 5
   fightingCloudPrefab: {fileID: 1369872676319256669, guid: 81fddd89064eb13498f74d5f545590c1, type: 3}
+--- !u!114 &-1078443684516752165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4092486558041709694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ca3084ac677ff4d85e4eaa650c6c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  straightEnemy: {fileID: 883949324008964580}

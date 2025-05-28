@@ -128,13 +128,33 @@ public class EnemyBase : MonoBehaviour
         // Determine the outcome of the fight
         if (strength >= other.strength)
         {
+            // Winner is 'this', loser is 'other'
+            strength -= other.strength;
             Destroy(other.gameObject);
-            isFighting = false; // Reset isFighting for the winner
+
+            if (strength <= 0)
+            {
+                Destroy(this.gameObject); // Winner also dies if strength is 0 or less
+            }
+            else
+            {
+                isFighting = false; // Reset isFighting for the winner
+            }
         }
         else
         {
+            // Winner is 'other', loser is 'this'
+            other.strength -= strength;
             Destroy(this.gameObject);
-            other.isFighting = false; // Reset isFighting for the winner
+
+            if (other.strength <= 0)
+            {
+                Destroy(other.gameObject); // Winner also dies if strength is 0 or less
+            }
+            else
+            {
+                other.isFighting = false; // Reset isFighting for the winner
+            }
         }
 
         // Re-enable colliders and restore gravity scale
