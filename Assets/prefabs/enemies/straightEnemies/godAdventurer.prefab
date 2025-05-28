@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d38f5b647f98a418e162a16be37900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  straightEnemy: {fileID: 0}
+  straightEnemy: {fileID: 883949324008964580}
   faction: 1
   strength: 1000
   isFighting: 0

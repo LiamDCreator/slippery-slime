@@ -3,20 +3,23 @@ using UnityEngine;
 public class godAdventurerMovement : MonoBehaviour
 {
     public straightEnemy straightEnemy;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float interval = 3f; // Seconds between speed increases
+    public float speedIncrease = 1f;
+
     void Start()
     {
-
+        StartCoroutine(IncreaseSpeedRoutine());
     }
 
-    // Update is called once per frame
-    void Update()
+    private System.Collections.IEnumerator IncreaseSpeedRoutine()
     {
-
-    }
-    void increaseMoveSpeed()
-    {
-
-
+        while (true)
+        {
+            yield return new WaitForSeconds(interval);
+            if (straightEnemy != null)
+            {
+                straightEnemy.originalmovespeed += speedIncrease;
+            }
+        }
     }
 }
