@@ -3171,7 +3171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1648974251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3184,7 +3184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43c032aa0c6765f47813e4e16a9f92f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnableObjects:
+  spawnableGroundObjects:
   - {fileID: 4092486558041709694, guid: d363ae46685ee8840bbc26b88f55cee5, type: 3}
   - {fileID: 4092486558041709694, guid: 09b019ff517990841b6324ec4c480310, type: 3}
   - {fileID: 2436109264180600488, guid: afa858fa31f1eb348a770ebf164327d0, type: 3}
@@ -3194,7 +3194,17 @@ MonoBehaviour:
   - {fileID: 4092486558041709694, guid: bb1c1f1c11c44354d9a41373ea43380a, type: 3}
   - {fileID: 4092486558041709694, guid: eabeaede15c37db4c86cbc47161b665e, type: 3}
   - {fileID: 8466703846465290599, guid: 1c10c387d9ca82049a0e217306ed3b3e, type: 3}
-  spawnRate: 5
+  spawnableFlyingObjects:
+  - {fileID: 5162445023047082162, guid: 44af2b7224a1d50499ef7ae09c077ce5, type: 3}
+  - {fileID: 5162445023047082162, guid: 53ef8693301df6945bed3731b7ffd540, type: 3}
+  - {fileID: 5162445023047082162, guid: 99345d7a83a9c1d4ea4fcfd9d46cc176, type: 3}
+  - {fileID: 5162445023047082162, guid: 1ae3a56df90292241af559568642ae81, type: 3}
+  groundSpawnRate: 6
+  flyingSpawnRate: 8
+  minGroundSpawnRate: 4
+  minFlyingSpawnRate: 6
+  groundSpawnRateDecrease: 0.2
+  flyingSpawnRateDecrease: 0.2
 --- !u!4 &1648974252
 Transform:
   m_ObjectHideFlags: 0
@@ -3682,7 +3692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1859295026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3695,7 +3705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43c032aa0c6765f47813e4e16a9f92f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnableObjects:
+  spawnableGroundObjects:
   - {fileID: 4092486558041709694, guid: d363ae46685ee8840bbc26b88f55cee5, type: 3}
   - {fileID: 4092486558041709694, guid: 09b019ff517990841b6324ec4c480310, type: 3}
   - {fileID: 2436109264180600488, guid: afa858fa31f1eb348a770ebf164327d0, type: 3}
@@ -3705,7 +3715,17 @@ MonoBehaviour:
   - {fileID: 4092486558041709694, guid: bb1c1f1c11c44354d9a41373ea43380a, type: 3}
   - {fileID: 4092486558041709694, guid: eabeaede15c37db4c86cbc47161b665e, type: 3}
   - {fileID: 8466703846465290599, guid: 1c10c387d9ca82049a0e217306ed3b3e, type: 3}
-  spawnRate: 5
+  spawnableFlyingObjects:
+  - {fileID: 5162445023047082162, guid: 44af2b7224a1d50499ef7ae09c077ce5, type: 3}
+  - {fileID: 5162445023047082162, guid: 53ef8693301df6945bed3731b7ffd540, type: 3}
+  - {fileID: 5162445023047082162, guid: 99345d7a83a9c1d4ea4fcfd9d46cc176, type: 3}
+  - {fileID: 5162445023047082162, guid: 1ae3a56df90292241af559568642ae81, type: 3}
+  groundSpawnRate: 6
+  flyingSpawnRate: 8
+  minGroundSpawnRate: 4
+  minFlyingSpawnRate: 6
+  groundSpawnRateDecrease: 0.2
+  flyingSpawnRateDecrease: 0.2
 --- !u!4 &1859295027
 Transform:
   m_ObjectHideFlags: 0

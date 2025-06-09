@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LowestPoint: -1
-  highestPoint: 3
+  highestPoint: 2
 --- !u!61 &5933987946629928790
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -325,3 +325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ec1fcd2e54ac24da03559582657308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 1
+  minimumTime: 0.5
+  maximumTime: 2

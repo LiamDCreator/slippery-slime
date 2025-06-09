@@ -2,28 +2,59 @@ using UnityEngine;
 
 public class enemySpawn : MonoBehaviour
 {
-    [SerializeField] private GameObject[] spawnableObjects; // Array of spawnable objects
-    [SerializeField] private float spawnRate = 1f; // Time between spawns
-    private float timer = 100f;
+    [SerializeField] private GameObject[] spawnableGroundObjects;
+    [SerializeField] private GameObject[] spawnableFlyingObjects;
+    [SerializeField] public float groundSpawnRate = 1f;
+    [SerializeField] public float flyingSpawnRate = 2f;
+    [SerializeField] private float minGroundSpawnRate = 0.2f;
+    [SerializeField] private float minFlyingSpawnRate = 0.5f;
+    [SerializeField] private float groundSpawnRateDecrease = 0.01f;
+    [SerializeField] private float flyingSpawnRateDecrease = 0.01f;
 
-    void Update()
+    void Start()
     {
-        timer += Time.deltaTime;
+        StartCoroutine(GroundSpawnRoutine());
+        StartCoroutine(FlyingSpawnRoutine());
+    }
 
-        if (timer >= spawnRate)
+    private System.Collections.IEnumerator GroundSpawnRoutine()
+    {
+        while (true)
         {
-            SpawnObject();
-            timer = 0f;
+            SpawnGroundObject();
+            yield return new WaitForSeconds(groundSpawnRate);
+            groundSpawnRate = Mathf.Max(minGroundSpawnRate, groundSpawnRate - groundSpawnRateDecrease);
         }
     }
 
-    void SpawnObject()
+    private System.Collections.IEnumerator FlyingSpawnRoutine()
     {
-        if (spawnableObjects.Length > 0)
+        while (true)
         {
-            // Spawn a random object from the array
+            SpawnFlyingObject();
+            yield return new WaitForSeconds(flyingSpawnRate);
+            flyingSpawnRate = Mathf.Max(minFlyingSpawnRate, flyingSpawnRate - flyingSpawnRateDecrease);
+        }
+    }
+
+    void SpawnGroundObject()
+    {
+        if (spawnableGroundObjects.Length > 0)
+        {
             Instantiate(
-                spawnableObjects[Random.Range(0, spawnableObjects.Length)],
+                spawnableGroundObjects[Random.Range(0, spawnableGroundObjects.Length)],
+                transform.position,
+                transform.rotation
+            );
+        }
+    }
+
+    void SpawnFlyingObject()
+    {
+        if (spawnableFlyingObjects.Length > 0)
+        {
+            Instantiate(
+                spawnableFlyingObjects[Random.Range(0, spawnableFlyingObjects.Length)],
                 transform.position,
                 transform.rotation
             );
