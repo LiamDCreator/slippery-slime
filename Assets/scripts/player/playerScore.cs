@@ -7,7 +7,7 @@ public class playerScore : MonoBehaviour
     private void Start()
     {
         // Find the gameManager in the scene
-        gameManager = FindObjectOfType<gameManager>();
+        gameManager = FindFirstObjectByType<gameManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)

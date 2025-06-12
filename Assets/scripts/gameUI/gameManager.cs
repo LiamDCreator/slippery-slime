@@ -6,9 +6,20 @@ public class gameManager : MonoBehaviour
     public int score = 0;
     [SerializeField] private Text scoreText;
     public GameObject pauseMenuUI;
+    public GameObject settingsMenuUI;
     private bool isPaused = false;
+    private bool isSettings = false;
 
-    // Method to increment the score
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauzeGame();
+        }
+    }
+
+
+
     public void AddScore(int amount)
     {
         score += amount;
@@ -33,6 +44,21 @@ public class gameManager : MonoBehaviour
             Time.timeScale = 1f; // Resumes the game
             if (pauseMenuUI != null)
                 pauseMenuUI.SetActive(false);
+        }
+    }
+    public void openSettings()
+    {
+        isSettings = !isSettings;
+        if (isSettings)
+        {
+            settingsMenuUI.SetActive(true);
+            pauseMenuUI.SetActive(false);
+        }
+        else
+        {
+            settingsMenuUI.SetActive(false);
+            pauseMenuUI.SetActive(true);
+
         }
     }
 }
