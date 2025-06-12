@@ -11,7 +11,7 @@ public class orcCaptainMovement : MonoBehaviour
 
     private bool isStandingStill = false;
 
-    private bool leftOrRight;
+
     [SerializeField] private float standStillDelay;
 
     [SerializeField] private float minimumWalkTime;
@@ -24,14 +24,7 @@ public class orcCaptainMovement : MonoBehaviour
 
     void Start()
     {
-        if (transform.position.x > 0)
-        {
-            leftOrRight = true;
-        }
-        else if (transform.position.x < 0)
-        {
-            leftOrRight = false;
-        }
+
         standStillRate = Random.Range(minimumWalkTime, maximumWalkTime);
 
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -60,8 +53,6 @@ public class orcCaptainMovement : MonoBehaviour
 
     private IEnumerator RandomlyStandStill()
     {
-
-
         // Change the color of the GameObject to indicate preparing to stand still
         if (spriteRenderer != null)
         {
@@ -79,17 +70,21 @@ public class orcCaptainMovement : MonoBehaviour
         float standStillTime = Random.Range(minimumStandStillTime, maximumStandStillTime);
         yield return new WaitForSeconds(standStillTime);
 
-        // Reset timer and resume movement
-        Debug.Log("Resuming movement...");
-        straightEnemy.moveSpeed = straightEnemy.originalmovespeed;
-        timer = 0f;
-        standStillRate = Random.Range(minimumWalkTime, maximumWalkTime);
-        isStandingStill = false;
-
-        // Reset the color back to the original
-        if (spriteRenderer != null)
+        // Only resume movement if not fighting
+        if (GetComponent<EnemyBase>() == null || !GetComponent<EnemyBase>().isFighting)
         {
-            spriteRenderer.color = originalColor;
+            Debug.Log("Resuming movement...");
+            straightEnemy.moveSpeed = straightEnemy.originalmovespeed;
+            timer = 0f;
+            standStillRate = Random.Range(minimumWalkTime, maximumWalkTime);
+            isStandingStill = false;
+
+            // Reset the color back to the original
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = originalColor;
+            }
         }
+        // If still fighting, stay still and keep the color until the fight ends
     }
 }
