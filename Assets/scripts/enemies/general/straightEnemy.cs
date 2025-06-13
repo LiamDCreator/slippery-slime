@@ -35,19 +35,13 @@ public class straightEnemy : MonoBehaviour
 
     public void stopEnemy()
     {
-
         moveSpeed = 0;
-        // Set y velocity to 0 to stop jumping/falling
+
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+            rb.linearVelocity = Vector2.zero; // Stop all movement
+            rb.constraints = RigidbodyConstraints2D.FreezePosition; // Freeze X and Y position
         }
-
-        // Set the object's Y position to -3
-        Vector3 pos = transform.position;
-        pos.y = -3.2f;
-        transform.position = pos;
-
     }
 }

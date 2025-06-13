@@ -12,6 +12,7 @@ public class EnemyBase : MonoBehaviour
     public straightEnemy straightEnemy; // Reference to the straightEnemy script
     public Faction faction;
     public int strength;
+    public int originalGravity;
     public bool isFighting = false;
     [SerializeField] private float minimumFightDuration;
     [SerializeField] private float maximumFightDuration;
@@ -157,7 +158,6 @@ public class EnemyBase : MonoBehaviour
             }
         }
 
-        // Re-enable colliders and restore gravity scale
         if (thisCollider != null)
         {
             thisCollider.enabled = true;
@@ -168,11 +168,15 @@ public class EnemyBase : MonoBehaviour
         }
         if (thisRigidbody != null)
         {
-            thisRigidbody.gravityScale = 1;
+            thisRigidbody.gravityScale = originalGravity;
+            // Unfreeze position but keep rotation frozen
+            thisRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
         if (otherRigidbody != null)
         {
-            otherRigidbody.gravityScale = 1;
+            otherRigidbody.gravityScale = originalGravity;
+            // Unfreeze position but keep rotation frozen
+            otherRigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
 
         // Reset movement speed for the winner
