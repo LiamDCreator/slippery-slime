@@ -108,6 +108,7 @@ MonoBehaviour:
   straightEnemy: {fileID: 1039687825592527927}
   faction: 0
   strength: 0
+  originalGravity: 1
   isFighting: 0
   minimumFightDuration: 1
   maximumFightDuration: 5
