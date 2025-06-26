@@ -322,6 +322,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: FinalSprites slippery slime_10
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 960
+        width: 95
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe41ceaaf5d55ee4fab1111272c82b10
+      internalID: -1897045088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -338,6 +360,7 @@ TextureImporter:
     nameFileIdTable:
       FinalSprites slippery slime_0: 2632873553030453234
       FinalSprites slippery slime_1: -7214018657693851232
+      FinalSprites slippery slime_10: -1897045088
       FinalSprites slippery slime_2: 1252738644
       FinalSprites slippery slime_3: 964627345
       FinalSprites slippery slime_4: 768093182

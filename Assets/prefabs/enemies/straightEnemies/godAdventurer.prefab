@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   straightEnemy: {fileID: 883949324008964580}
-  interval: 3
-  speedIncrease: 1
+  interval: 5
+  speedIncrease: 0.5
 --- !u!50 &210699192981318942
 Rigidbody2D:
   serializedVersion: 5
