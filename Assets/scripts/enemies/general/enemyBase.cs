@@ -23,6 +23,13 @@ public class EnemyBase : MonoBehaviour
     {
         EnemyBase other = collision.gameObject.GetComponent<EnemyBase>();
 
+
+        // Ignore collisions with enemies of the same faction
+        if (other != null && other.faction == faction)
+        {
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
+            return; // Exit the method to avoid further processing
+        }
         // Ignore collisions with enemies of the same faction or already fighting
         if (other == null || other.faction == faction || isFighting || other.isFighting)
             return;

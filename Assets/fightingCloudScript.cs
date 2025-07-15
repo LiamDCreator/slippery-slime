@@ -8,8 +8,8 @@ public class fightingCloudScript : MonoBehaviour
     public List<EnemyBase> humans = new List<EnemyBase>();
     [SerializeField] private int totalMonsterStrength = 0;
     [SerializeField] private int totalHumanStrength = 0;
-    [SerializeField] private int TimeToFight = 0;
-    [SerializeField] private int timeBetweenCombat = 0;
+    [SerializeField] private float TimeToFight = 0;
+    [SerializeField] private float timeBetweenCombat = 0;
 
 
     void Start()
