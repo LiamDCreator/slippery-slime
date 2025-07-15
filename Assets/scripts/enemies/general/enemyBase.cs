@@ -19,6 +19,10 @@ public class EnemyBase : MonoBehaviour
 
     public GameObject fightingCloudPrefab;
 
+    void OnEnable()
+    {
+        isFighting = false;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         EnemyBase other = collision.gameObject.GetComponent<EnemyBase>();
