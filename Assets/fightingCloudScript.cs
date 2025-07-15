@@ -10,6 +10,7 @@ public class fightingCloudScript : MonoBehaviour
     [SerializeField] private int totalHumanStrength = 0;
     [SerializeField] private float TimeToFight = 0;
     [SerializeField] private float timeBetweenCombat = 0;
+    private bool continueFight = true;
 
 
     void Start()
@@ -52,7 +53,7 @@ public class fightingCloudScript : MonoBehaviour
     private IEnumerator fightingLogic()
     {
         yield return new WaitForSeconds(TimeToFight);
-        while (humans.Count > 0 && monsters.Count > 0)
+        while (continueFight == true)
         {
             DistributeAndSubtractStrength(monsters, totalMonsterStrength, humans);
             DistributeAndSubtractStrength(humans, totalHumanStrength, monsters);
