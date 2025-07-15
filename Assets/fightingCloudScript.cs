@@ -8,10 +8,13 @@ public class fightingCloudScript : MonoBehaviour
     public List<EnemyBase> humans = new List<EnemyBase>();
     [SerializeField] private int totalMonsterStrength = 0;
     [SerializeField] private int totalHumanStrength = 0;
+    [SerializeField] private int TimeToFight = 0;
+    [SerializeField] private int timeBetweenCombat = 0;
+
 
     void Start()
     {
-
+        StartCoroutine(fightingLogic());
     }
     void Update()
     {
@@ -48,18 +51,34 @@ public class fightingCloudScript : MonoBehaviour
     }
     private IEnumerator fightingLogic()
     {
-        // Reset totals before calculation
-        totalMonsterStrength = 0;
-        totalHumanStrength = 0;
+        yield return new WaitForSeconds(TimeToFight);
 
-        // Sum strengths for monsters
-        foreach (var enemy in monsters)
-            totalMonsterStrength += enemy.strength;
+        DistributeAndSubtractStrength(monsters, totalMonsterStrength, humans);
+        DistributeAndSubtractStrength(humans, totalHumanStrength, monsters);
+    }
 
-        // Sum strengths for humans
-        foreach (var enemy in humans)
-            totalHumanStrength += enemy.strength;
+    private void DistributeAndSubtractStrength(List<EnemyBase> fromFaction, int totalStrength, List<EnemyBase> toFaction)
+    {
+        if (toFaction.Count == 0) return;
 
-        yield return null; // If you want to yield for coroutine compatibility
+        // Step 1: Generate random weights
+        List<float> weights = new List<float>();
+        float sum = 0f;
+        foreach (var enemy in toFaction)
+        {
+            float w = Random.value;
+            weights.Add(w);
+            sum += w;
+        }
+
+        // Step 2: Normalize weights and subtract strength
+        int i = 0;
+        foreach (var enemy in toFaction)
+        {
+            float percent = weights[i] / sum;
+            int takenStrength = Mathf.RoundToInt(percent * totalStrength);
+            enemy.strength -= takenStrength; // Subtract from current strength
+            i++;
+        }
     }
 }
