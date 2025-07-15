@@ -179,5 +179,5 @@ MonoBehaviour:
   humans: []
   totalMonsterStrength: 0
   totalHumanStrength: 0
-  TimeToFight: 1
-  timeBetweenCombat: 0
+  TimeToFight: 2
+  timeBetweenCombat: 1

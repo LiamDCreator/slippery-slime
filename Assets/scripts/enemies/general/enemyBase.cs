@@ -27,11 +27,6 @@ public class EnemyBase : MonoBehaviour
         if (other == null || other.faction == faction || isFighting || other.isFighting)
             return;
 
-        // Stop movement for both enemies
-        if (straightEnemy != null)
-            straightEnemy.stopEnemy();
-        if (other.straightEnemy != null)
-            other.straightEnemy.stopEnemy();
 
         // Mark both as fighting
         isFighting = true;
@@ -71,4 +66,5 @@ public class EnemyBase : MonoBehaviour
         fightingCloudScript cloudScript = cloudInstance.GetComponent<fightingCloudScript>();
 
     }
+
 }

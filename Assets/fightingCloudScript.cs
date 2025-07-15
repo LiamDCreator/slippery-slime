@@ -52,9 +52,14 @@ public class fightingCloudScript : MonoBehaviour
     private IEnumerator fightingLogic()
     {
         yield return new WaitForSeconds(TimeToFight);
+        while (humans.Count > 0 && monsters.Count > 0)
+        {
+            DistributeAndSubtractStrength(monsters, totalMonsterStrength, humans);
+            DistributeAndSubtractStrength(humans, totalHumanStrength, monsters);
+            checkIfFactionDied();
 
-        DistributeAndSubtractStrength(monsters, totalMonsterStrength, humans);
-        DistributeAndSubtractStrength(humans, totalHumanStrength, monsters);
+            yield return new WaitForSeconds(timeBetweenCombat);
+        }
     }
 
     private void DistributeAndSubtractStrength(List<EnemyBase> fromFaction, int totalStrength, List<EnemyBase> toFaction)
@@ -71,14 +76,42 @@ public class fightingCloudScript : MonoBehaviour
             sum += w;
         }
 
-        // Step 2: Normalize weights and subtract strength
-        int i = 0;
-        foreach (var enemy in toFaction)
+        // Step 2: Normalize weights and subtract strength using a backwards for loop (Option 2)
+        for (int i = toFaction.Count - 1; i >= 0; i--)
         {
+            var enemy = toFaction[i];
             float percent = weights[i] / sum;
             int takenStrength = Mathf.RoundToInt(percent * totalStrength);
             enemy.strength -= takenStrength; // Subtract from current strength
-            i++;
+            if (enemy.strength <= 0)
+            {
+                Destroy(enemy.gameObject);
+                toFaction.RemoveAt(i); // Remove from list immediately
+            }
+        }
+    }
+
+    private void checkIfFactionDied()
+    {
+        if (humans.Count == 0 && monsters.Count > 0)
+        {
+            foreach (var enemy in monsters)
+            {
+                enemy.gameObject.SetActive(true);
+            }
+            Destroy(gameObject);
+        }
+        else if (monsters.Count == 0 && humans.Count > 0)
+        {
+            foreach (var enemy in humans)
+            {
+                enemy.gameObject.SetActive(true);
+            }
+            Destroy(gameObject);
+        }
+        if (humans.Count == 0 && monsters.Count == 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
