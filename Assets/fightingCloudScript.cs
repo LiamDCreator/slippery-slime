@@ -55,6 +55,7 @@ public class fightingCloudScript : MonoBehaviour
         yield return new WaitForSeconds(TimeToFight);
         while (continueFight == true)
         {
+            checkIfFactionDied();
             DistributeAndSubtractStrength(monsters, totalMonsterStrength, humans);
             DistributeAndSubtractStrength(humans, totalHumanStrength, monsters);
             checkIfFactionDied();

@@ -3,6 +3,7 @@ using UnityEngine;
 public class enemySpawn : MonoBehaviour
 {
     [SerializeField] private GameObject[] spawnableGroundObjects;
+    [SerializeField] private GameObject[] spawnableWaves;
     [SerializeField] private GameObject[] spawnableFlyingObjects;
     [SerializeField] public float groundSpawnRate = 1f;
     [SerializeField] public float flyingSpawnRate = 2f;
@@ -10,6 +11,13 @@ public class enemySpawn : MonoBehaviour
     [SerializeField] private float minFlyingSpawnRate = 0.5f;
     [SerializeField] private float groundSpawnRateDecrease = 0.01f;
     [SerializeField] private float flyingSpawnRateDecrease = 0.01f;
+    [SerializeField] private int pointsBeforeWaves;
+    [SerializeField] private int spawnWaveChance;
+    [SerializeField] private int spawnWaveNumber;
+    [SerializeField] private int spawnWaveChanceIncrease;
+    [SerializeField] private int spawnWaveChanceDecrease;
+
+
 
     void Start()
     {
@@ -21,9 +29,22 @@ public class enemySpawn : MonoBehaviour
     {
         while (true)
         {
-            SpawnGroundObject();
-            yield return new WaitForSeconds(groundSpawnRate);
-            groundSpawnRate = Mathf.Max(minGroundSpawnRate, groundSpawnRate - groundSpawnRateDecrease);
+            spawnWaveNumber = Random.Range(0, 100);
+            if (spawnWaveNumber > spawnWaveChance)
+            {
+                SpawnGroundObject();
+                yield return new WaitForSeconds(groundSpawnRate);
+                groundSpawnRate = Mathf.Max(minGroundSpawnRate, groundSpawnRate - groundSpawnRateDecrease);
+                spawnWaveChance += spawnWaveChanceIncrease;
+            }
+            else
+            {
+                SpawnWaves();
+                yield return new WaitForSeconds(groundSpawnRate);
+                groundSpawnRate = Mathf.Max(minGroundSpawnRate, groundSpawnRate - groundSpawnRateDecrease);
+                spawnWaveChance -= spawnWaveChanceDecrease;
+
+            }
         }
     }
 
@@ -48,7 +69,17 @@ public class enemySpawn : MonoBehaviour
             );
         }
     }
-
+    void SpawnWaves()
+    {
+        if (spawnableWaves.Length > 0)
+        {
+            Instantiate(
+                spawnableWaves[Random.Range(0, spawnableWaves.Length)],
+                transform.position,
+                transform.rotation
+            );
+        }
+    }
     void SpawnFlyingObject()
     {
         if (spawnableFlyingObjects.Length > 0)
