@@ -33,15 +33,4 @@ public class straightEnemy : MonoBehaviour
         }
     }
 
-    public void stopEnemy()
-    {
-        moveSpeed = 0;
-
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            rb.linearVelocity = Vector2.zero; // Stop all movement
-            rb.constraints = RigidbodyConstraints2D.FreezePosition; // Freeze X and Y position
-        }
-    }
 }

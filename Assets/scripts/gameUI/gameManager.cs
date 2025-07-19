@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class gameManager : MonoBehaviour
 {
     public int score = 0;
-    [SerializeField] private Text scoreText;
+    public Text scoreText;
     public GameObject pauseMenuUI;
     public GameObject settingsMenuUI;
     private bool isPaused = false;

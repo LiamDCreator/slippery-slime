@@ -6,6 +6,7 @@ public class playerScript : MonoBehaviour
     private bool isGrounded;
     private bool wasGrounded;
     private bool canfastFall;
+    public bool playerCanDie = true;
     public int jumpsRemaining = 2;
 
     [SerializeField] private float forceAmount = 10f;
@@ -92,13 +93,16 @@ public class playerScript : MonoBehaviour
 
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (playerCanDie == true)
         {
-            Destroy(gameObject);
-            gameOverScreen.gameOver();
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                Destroy(gameObject);
+                gameOverScreen.gameOver();
 
+            }
         }
     }
 
