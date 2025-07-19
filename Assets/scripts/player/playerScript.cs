@@ -93,7 +93,7 @@ public class playerScript : MonoBehaviour
 
         }
     }
-    private void OnCollisionEnter2D(collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (playerCanDie == true)
         {
