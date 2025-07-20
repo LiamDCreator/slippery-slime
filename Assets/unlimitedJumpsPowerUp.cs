@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
-
-public class StarPowerUpScript : MonoBehaviour
+public class unlimitedJumpsPowerUp : MonoBehaviour
 {
     public PlayerPowerUps playerPowerUps;
 
@@ -26,6 +25,7 @@ public class StarPowerUpScript : MonoBehaviour
         }
     }
 
+    // Update is called once per frame
     private void Update()
     {
         Move();
@@ -58,7 +58,7 @@ public class StarPowerUpScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            playerPowerUps.StarPower();
+            playerPowerUps.UnlimitedJumpsPower();
             Destroy(gameObject);
         }
     }

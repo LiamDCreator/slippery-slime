@@ -7,6 +7,7 @@ public class playerScript : MonoBehaviour
     private bool wasGrounded;
     private bool canfastFall;
     public bool playerCanDie = true;
+    public bool playerHasUnlimitedJumps = false;
     public int jumpsRemaining = 2;
 
     [SerializeField] private float forceAmount = 10f;
@@ -60,7 +61,7 @@ public class playerScript : MonoBehaviour
 
     private void playerDash()
     {
-        if (jumpsRemaining <= 1 && jumpsRemaining > 0)
+        if (jumpsRemaining <= 1 && jumpsRemaining > 0 || jumpsRemaining >= 5 && jumpsRemaining > 0)
         {
             Vector2 dashDirection = Vector2.zero;
 
@@ -87,7 +88,11 @@ public class playerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S) && canfastFall == true)
         {
             rb.AddForce((Vector2.down).normalized * forceAmount, ForceMode2D.Impulse);
-            canfastFall = false;
+            if (playerHasUnlimitedJumps = false)
+            {
+                canfastFall = false;
+            }
+
             Debug.Log("Yuuuup");
             audioManager.Instance.PlaySFX(audioManager.Instance.downDashSFX);
 

@@ -7,11 +7,27 @@ public class PlayerPowerUps : MonoBehaviour
     public playerScript playerScript;
     public gameManager gameManager;
     [SerializeField] private float starPowerDuration;
+    [SerializeField] private float unlimitedJumpsPowerDuration;
 
+
+    public void UnlimitedJumpsPower()
+    {
+        StartCoroutine(playerHasUnlimitedJumps());
+    }
     public void StarPower()
     {
         StartCoroutine(playerHasStarPower());
 
+    }
+
+    private IEnumerator playerHasUnlimitedJumps()
+    {
+        playerScript.jumpsRemaining = 100;
+        playerScript.playerHasUnlimitedJumps = true;
+        yield return new WaitForSeconds(unlimitedJumpsPowerDuration);
+        playerScript.jumpsRemaining = 2;
+        playerScript.playerHasUnlimitedJumps = false;
+        yield return null;
     }
     private IEnumerator playerHasStarPower()
     {
