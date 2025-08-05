@@ -61,5 +61,15 @@ public class unlimitedJumpsPowerUp : MonoBehaviour
             playerPowerUps.UnlimitedJumpsPower();
             Destroy(gameObject);
         }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
+
+        }
+        if (collision.gameObject.CompareTag("powerUp"))
+        {
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
+
+        }
     }
 }

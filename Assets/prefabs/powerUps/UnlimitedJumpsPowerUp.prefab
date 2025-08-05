@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5177812191423669531}
   m_Layer: 0
   m_Name: UnlimitedJumpsPowerUp
-  m_TagString: Untagged
+  m_TagString: powerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
