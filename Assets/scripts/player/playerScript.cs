@@ -88,7 +88,7 @@ public class playerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S) && canfastFall == true)
         {
             rb.AddForce((Vector2.down).normalized * forceAmount, ForceMode2D.Impulse);
-            if (playerHasUnlimitedJumps = false)
+            if (playerHasUnlimitedJumps == false)
             {
                 canfastFall = false;
             }
