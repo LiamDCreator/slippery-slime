@@ -64,24 +64,37 @@ public class playerScript : MonoBehaviour
         if (jumpsRemaining <= 1 && jumpsRemaining > 0 || jumpsRemaining >= 5 && jumpsRemaining > 0)
         {
             Vector2 dashDirection = Vector2.zero;
-
+            float targetRotation = 0f;
             if (Input.GetKeyDown(KeyCode.D))
+            {
                 dashDirection = Vector2.right;
+                targetRotation = 0f;
+            }
             else if (Input.GetKeyDown(KeyCode.A))
+            {
                 dashDirection = Vector2.left;
+                targetRotation = 180f;
+            }
             else if (Input.GetKeyDown(KeyCode.Q))
+            {
                 dashDirection = (Vector2.left + Vector2.up).normalized;
+                targetRotation = 180f;
+            }
             else if (Input.GetKeyDown(KeyCode.E))
+            {
                 dashDirection = (Vector2.right + Vector2.up).normalized;
-
+                targetRotation = 0f;
+            }
             if (dashDirection != Vector2.zero)
             {
                 rb.AddForce(dashDirection * forceAmount, ForceMode2D.Impulse);
                 jumpsRemaining--;
                 audioManager.Instance.PlaySFX(audioManager.Instance.dashSFX);
+                transform.rotation = Quaternion.Euler(0f, targetRotation, 0f);
             }
         }
     }
+
     private void playerFastFall()
     {
 
