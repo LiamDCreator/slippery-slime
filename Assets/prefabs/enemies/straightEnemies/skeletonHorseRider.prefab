@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   straightEnemy: {fileID: 850285181256629420}
   faction: 0
-  strength: 100
+  strength: 30
   originalGravity: 1
   isFighting: 0
   minimumFightDuration: 1
@@ -211,7 +211,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 1.8, y: 1.8}
   m_EdgeRadius: 0
 --- !u!61 &2103566390196380084
 BoxCollider2D:

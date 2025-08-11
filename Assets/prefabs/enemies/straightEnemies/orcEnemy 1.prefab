@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   straightEnemy: {fileID: 8726792491105029550}
   faction: 0
-  strength: 8
+  strength: 10
   originalGravity: 1
   isFighting: 0
   minimumFightDuration: 1
