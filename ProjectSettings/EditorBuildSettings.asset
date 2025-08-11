@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/BasicLevel.unity
+    path: Assets/Scenes/BasicLevel.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Main Menu.unity
+    path: Assets/Scenes/Main Menu.unity
     guid: fefeac254bbcfed4eb05be8c4b0a20c5
   - enabled: 1
-    path: Assets/ClashLevel.unity
+    path: Assets/Scenes/ClashLevel.unity
     guid: 07e153aa399534f40a54f6dd3c28377a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
