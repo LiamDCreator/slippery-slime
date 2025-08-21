@@ -1,25 +1,37 @@
 fileFormatVersion: 2
-guid: 03d44eae5a49f254f987ca0b958fb1b8
+guid: ad74193757b588c4ea8a644e0faaa386
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1690155150245408869
-    second: skeletonHorseWalk_0
+      213: -5712601368616876788
+    second: jumpSpritesSlime_0
   - first:
-      213: 6905213841244580224
-    second: skeletonHorseWalk_1
+      213: -3485994905197158463
+    second: jumpSpritesSlime_1
   - first:
-      213: -4424940728241993947
-    second: skeletonHorseWalk_2
+      213: 4911756713832691773
+    second: jumpSpritesSlime_2
   - first:
-      213: -7413571999812759948
-    second: skeletonHorseWalk_3
+      213: 1523623171628286176
+    second: jumpSpritesSlime_3
   - first:
-      213: 7022527642688653384
-    second: skeletonHorseWalk_4
+      213: -4399355816580137478
+    second: jumpSpritesSlime_4
   - first:
-      213: 2540963665183709083
-    second: skeletonHorseWalk_5
+      213: 388697161824765881
+    second: jumpSpritesSlime_5
+  - first:
+      213: -8647546111868428476
+    second: jumpSpritesSlime_6
+  - first:
+      213: -5144968862588364909
+    second: jumpSpritesSlime_7
+  - first:
+      213: 3420910170909066827
+    second: jumpSpritesSlime_8
+  - first:
+      213: -9042777269610924092
+    second: jumpSpritesSlime_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,13 +127,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: skeletonHorseWalk_0
+      name: jumpSpritesSlime_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 100
-        width: 336
-        height: 336
+        x: 30
+        y: 540
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b9f435e78dc5b88e0800000000000000
-      internalID: -1690155150245408869
+      spriteID: c054e286253c8b0b0800000000000000
+      internalID: -5712601368616876788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skeletonHorseWalk_1
+      name: jumpSpritesSlime_1
       rect:
         serializedVersion: 2
-        x: 336
-        y: 100
-        width: 336
-        height: 336
+        x: 251
+        y: 536
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0896e79376f34df50800000000000000
-      internalID: 6905213841244580224
+      spriteID: 1cfd6e27a124f9fc0800000000000000
+      internalID: -3485994905197158463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skeletonHorseWalk_2
+      name: jumpSpritesSlime_2
       rect:
         serializedVersion: 2
-        x: 672
-        y: 100
-        width: 336
-        height: 336
+        x: 476
+        y: 532
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +186,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5274afc1ad37792c0800000000000000
-      internalID: -4424940728241993947
+      spriteID: d38332725b01a2440800000000000000
+      internalID: 4911756713832691773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skeletonHorseWalk_3
+      name: jumpSpritesSlime_3
       rect:
         serializedVersion: 2
-        x: 1015
-        y: 100
-        width: 329
-        height: 336
+        x: 32
+        y: 320
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 47ec0628b83bd1990800000000000000
-      internalID: -7413571999812759948
+      spriteID: 0e0457cb33ff42510800000000000000
+      internalID: 1523623171628286176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skeletonHorseWalk_4
+      name: jumpSpritesSlime_4
       rect:
         serializedVersion: 2
-        x: 1354
-        y: 101
-        width: 326
-        height: 336
+        x: 254
+        y: 318
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +230,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 84881df1fa7057160800000000000000
-      internalID: 7022527642688653384
+      spriteID: afd3130913952f2c0800000000000000
+      internalID: -4399355816580137478
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skeletonHorseWalk_5
+      name: jumpSpritesSlime_5
       rect:
         serializedVersion: 2
-        x: 1686
-        y: 102
-        width: 330
-        height: 336
+        x: 482
+        y: 319
+        width: 160
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,8 +252,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b97137aadf0534320800000000000000
-      internalID: 2540963665183709083
+      spriteID: 9b784cf520ee46500800000000000000
+      internalID: 388697161824765881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jumpSpritesSlime_6
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 323
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44f954fb0aebdf780800000000000000
+      internalID: -8647546111868428476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jumpSpritesSlime_7
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 85
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39799f424166998b0800000000000000
+      internalID: -5144968862588364909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jumpSpritesSlime_8
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 85
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b464e89fca3897f20800000000000000
+      internalID: 3420910170909066827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jumpSpritesSlime_9
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 85
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c73dd5ebf9918280800000000000000
+      internalID: -9042777269610924092
       vertices: []
       indices: 
       edges: []
@@ -250,7 +350,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 63ac84897762a774d911dfdef4069da6
+    spriteID: 7b217faf3b8259b479e1bfa38dd35429
     internalID: 0
     vertices: []
     indices: 
@@ -260,12 +360,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      skeletonHorseWalk_0: -1690155150245408869
-      skeletonHorseWalk_1: 6905213841244580224
-      skeletonHorseWalk_2: -4424940728241993947
-      skeletonHorseWalk_3: -7413571999812759948
-      skeletonHorseWalk_4: 7022527642688653384
-      skeletonHorseWalk_5: 2540963665183709083
+      jumpSpritesSlime_10: -1356422701
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

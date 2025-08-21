@@ -11,6 +11,8 @@ public class audioManager : MonoBehaviour
     public AudioClip jumpSFX;
     public AudioClip dashSFX;
     public AudioClip downDashSFX;
+    [Header("Music clips")]
+    public AudioClip musicClip;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
@@ -19,6 +21,13 @@ public class audioManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            if (musicSource != null && musicClip != null)
+            {
+                musicSource.clip = musicClip;
+                musicSource.loop = true;
+                musicSource.Play();
+            }
         }
         else
         {

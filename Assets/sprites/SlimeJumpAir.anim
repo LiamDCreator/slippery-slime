@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: skeletonHorseWalk
+  m_Name: SlimeJumpAir
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,17 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1690155150245408869, guid: 03d44eae5a49f254f987ca0b958fb1b8, type: 3}
-    - time: 0.1
-      value: {fileID: 6905213841244580224, guid: 03d44eae5a49f254f987ca0b958fb1b8, type: 3}
-    - time: 0.2
-      value: {fileID: -4424940728241993947, guid: 03d44eae5a49f254f987ca0b958fb1b8, type: 3}
-    - time: 0.3
-      value: {fileID: -7413571999812759948, guid: 03d44eae5a49f254f987ca0b958fb1b8, type: 3}
-    - time: 0.4
-      value: {fileID: 7022527642688653384, guid: 03d44eae5a49f254f987ca0b958fb1b8, type: 3}
+      value: {fileID: 1523623171628286176, guid: ad74193757b588c4ea8a644e0faaa386, type: 3}
+    - time: 0.16666667
+      value: {fileID: -4399355816580137478, guid: ad74193757b588c4ea8a644e0faaa386, type: 3}
+    - time: 0.33333334
+      value: {fileID: 388697161824765881, guid: ad74193757b588c4ea8a644e0faaa386, type: 3}
     - time: 0.5
-      value: {fileID: 2540963665183709083, guid: 03d44eae5a49f254f987ca0b958fb1b8, type: 3}
+      value: {fileID: -8647546111868428476, guid: ad74193757b588c4ea8a644e0faaa386, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -54,12 +50,10 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -1690155150245408869, guid: 03d44eae5a49f254f987ca0b958fb1b8, type: 3}
-    - {fileID: 6905213841244580224, guid: 03d44eae5a49f254f987ca0b958fb1b8, type: 3}
-    - {fileID: -4424940728241993947, guid: 03d44eae5a49f254f987ca0b958fb1b8, type: 3}
-    - {fileID: -7413571999812759948, guid: 03d44eae5a49f254f987ca0b958fb1b8, type: 3}
-    - {fileID: 7022527642688653384, guid: 03d44eae5a49f254f987ca0b958fb1b8, type: 3}
-    - {fileID: 2540963665183709083, guid: 03d44eae5a49f254f987ca0b958fb1b8, type: 3}
+    - {fileID: 1523623171628286176, guid: ad74193757b588c4ea8a644e0faaa386, type: 3}
+    - {fileID: -4399355816580137478, guid: ad74193757b588c4ea8a644e0faaa386, type: 3}
+    - {fileID: 388697161824765881, guid: ad74193757b588c4ea8a644e0faaa386, type: 3}
+    - {fileID: -8647546111868428476, guid: ad74193757b588c4ea8a644e0faaa386, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

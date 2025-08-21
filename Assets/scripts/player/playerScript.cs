@@ -16,6 +16,7 @@ public class playerScript : MonoBehaviour
     [SerializeField] private float groundCheckRadius = 0.3f;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private gameOverScreenScript gameOverScreen;
+    [SerializeField] private Animator animator;
 
     void Start()
     {
@@ -55,6 +56,10 @@ public class playerScript : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce); // fixed to velocity
             jumpsRemaining--;
 
+            if (animator != null)
+            {
+                animator.SetTrigger("Jump");
+            }
             audioManager.Instance.PlaySFX(audioManager.Instance.jumpSFX);
         }
     }
