@@ -1,16 +1,23 @@
 using UnityEngine;
-
+using System.Collections;
 public class enemySpawn : MonoBehaviour
 {
     [SerializeField] private GameObject[] spawnableGroundObjects;
     [SerializeField] private GameObject[] spawnableWaves;
     [SerializeField] private GameObject[] spawnableFlyingObjects;
+    [Header("Ground")]
     [SerializeField] public float groundSpawnRate = 1f;
-    [SerializeField] public float flyingSpawnRate = 2f;
     [SerializeField] private float minGroundSpawnRate = 0.2f;
-    [SerializeField] private float minFlyingSpawnRate = 0.5f;
     [SerializeField] private float groundSpawnRateDecrease = 0.01f;
+
+
+    [Header("Flying")]
+    [SerializeField] public float flyingSpawnRate = 2f;
+    [SerializeField] private float minFlyingSpawnRate = 0.5f;
     [SerializeField] private float flyingSpawnRateDecrease = 0.01f;
+
+    [Header("Waves")]
+
     [SerializeField] private int pointsBeforeWaves;
     [SerializeField] private int spawnWaveChance;
     [SerializeField] private int spawnWaveNumber;
@@ -25,7 +32,7 @@ public class enemySpawn : MonoBehaviour
         StartCoroutine(FlyingSpawnRoutine());
     }
 
-    private System.Collections.IEnumerator GroundSpawnRoutine()
+    private IEnumerator GroundSpawnRoutine()
     {
         while (true)
         {
@@ -48,7 +55,7 @@ public class enemySpawn : MonoBehaviour
         }
     }
 
-    private System.Collections.IEnumerator FlyingSpawnRoutine()
+    private IEnumerator FlyingSpawnRoutine()
     {
         while (true)
         {
