@@ -108,6 +108,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   originalmovespeed: 0
+  TimeBeforeBehaviours: 0
+  doesEnemyChangeDirection: 1
+  changeDirectionMinimunInterval: 2
+  changeDirectionMaximumInterval: 9
+  changeBackDirectionMinimunInterval: 99
+  changeBackDirectionMaximumInterval: 99
+  doesEnemyStandStill: 0
+  minimumWalkTime: 0
+  maximumwalktime: 0
+  minimumstandStillTime: 0
+  maximumStandStillTime: 0
 --- !u!114 &2197500216669682585
 MonoBehaviour:
   m_ObjectHideFlags: 0
