@@ -150,6 +150,7 @@ MonoBehaviour:
   isFighting: 0
   minimumFightDuration: 1
   maximumFightDuration: 5
+  cloudSize: 1
   fightingCloudPrefab: {fileID: 1369872676319256669, guid: 81fddd89064eb13498f74d5f545590c1, type: 3}
 --- !u!50 &7576141959840249976
 Rigidbody2D:
@@ -212,7 +213,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.5, y: -0.3}
+  m_Offset: {x: 0.3, y: -0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}

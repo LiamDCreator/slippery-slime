@@ -7,6 +7,7 @@ public class powerUpSpawner : MonoBehaviour
     [SerializeField] private GameObject[] spawnablePowerUps;
     [SerializeField] private float minimumSpawnrate;
     [SerializeField] private float maximumSpawnrate;
+    [SerializeField] private float timeBeforeSpawn;
 
 
     void Start()
@@ -16,6 +17,8 @@ public class powerUpSpawner : MonoBehaviour
 
     private IEnumerator powerupSpawnRoutine()
     {
+        yield return new WaitForSeconds(timeBeforeSpawn);
+        spawnPowerUps();
         while (true)
         {
 

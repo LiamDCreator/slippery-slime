@@ -16,6 +16,7 @@ public class EnemyBase : MonoBehaviour
     public bool isFighting = false;
     [SerializeField] private float minimumFightDuration;
     [SerializeField] private float maximumFightDuration;
+    [SerializeField] private float cloudSize;
 
     public GameObject fightingCloudPrefab;
 
@@ -54,11 +55,11 @@ public class EnemyBase : MonoBehaviour
             combinedBounds.Encapsulate(rendB.bounds);
             cloudPos = combinedBounds.center + Vector3.up * 0.1f;
 
-            // Scale the cloud to cover both enemies, with some padding
-            float padding = 1.2f;
+
+
             cloudScale = new Vector3(
-                combinedBounds.size.x * padding,
-                combinedBounds.size.y * padding,
+                combinedBounds.size.x * cloudSize,
+                combinedBounds.size.y * cloudSize,
                 1f
             );
         }

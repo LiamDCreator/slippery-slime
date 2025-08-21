@@ -150,6 +150,7 @@ MonoBehaviour:
   isFighting: 0
   minimumFightDuration: 1
   maximumFightDuration: 5
+  cloudSize: 1
   fightingCloudPrefab: {fileID: 1369872676319256669, guid: 81fddd89064eb13498f74d5f545590c1, type: 3}
 --- !u!50 &3508674629934750148
 Rigidbody2D:

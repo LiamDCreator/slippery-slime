@@ -112,6 +112,8 @@ MonoBehaviour:
   doesEnemyChangeDirection: 0
   changeDirectionMinimunInterval: 0
   changeDirectionMaximumInterval: 0
+  changeBackDirectionMinimunInterval: 0
+  changeBackDirectionMaximumInterval: 0
   doesEnemyStandStill: 0
   minimumWalkTime: 0
   maximumwalktime: 0
@@ -148,6 +150,7 @@ MonoBehaviour:
   isFighting: 0
   minimumFightDuration: 1
   maximumFightDuration: 5
+  cloudSize: 1
   fightingCloudPrefab: {fileID: 1369872676319256669, guid: 81fddd89064eb13498f74d5f545590c1, type: 3}
 --- !u!50 &3239431846911484460
 Rigidbody2D:

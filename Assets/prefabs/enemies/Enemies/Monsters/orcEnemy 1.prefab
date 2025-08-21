@@ -110,6 +110,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1.5
   originalmovespeed: 0
+  TimeBeforeBehaviours: 0
+  doesEnemyChangeDirection: 0
+  changeDirectionMinimunInterval: 0
+  changeDirectionMaximumInterval: 0
+  changeBackDirectionMinimunInterval: 0
+  changeBackDirectionMaximumInterval: 0
+  doesEnemyStandStill: 0
+  minimumWalkTime: 0
+  maximumwalktime: 0
+  minimumstandStillTime: 0
+  maximumStandStillTime: 0
 --- !u!114 &1599039006304802948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +152,7 @@ MonoBehaviour:
   isFighting: 0
   minimumFightDuration: 1
   maximumFightDuration: 5
+  cloudSize: 1
   fightingCloudPrefab: {fileID: 1369872676319256669, guid: 81fddd89064eb13498f74d5f545590c1, type: 3}
 --- !u!114 &9119411789652820313
 MonoBehaviour:

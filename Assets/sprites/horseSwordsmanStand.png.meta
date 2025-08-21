@@ -1,25 +1,25 @@
 fileFormatVersion: 2
-guid: 1b07b35339a35cf40b70f936254557fa
+guid: 0d40faf07e50fc34b97a916a4f1725fc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4639223777550221486
-    second: horseSwordsman_0
+      213: -7987568422366100165
+    second: horseSwordsmanStand_0
   - first:
-      213: -1882850107201790748
-    second: horseSwordsman_1
+      213: -7827198017849633519
+    second: horseSwordsmanStand_1
   - first:
-      213: -4455944073702987985
-    second: horseSwordsman_2
+      213: 3646406464106306156
+    second: horseSwordsmanStand_2
   - first:
-      213: -2133133501354656883
-    second: horseSwordsman_3
+      213: -5377959598778998838
+    second: horseSwordsmanStand_3
   - first:
-      213: -4189021658081571086
-    second: horseSwordsman_4
+      213: 260878362557179683
+    second: horseSwordsmanStand_4
   - first:
-      213: 6336055028081075861
-    second: horseSwordsman_5
+      213: 3078999266875094356
+    second: horseSwordsmanStand_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,32 +115,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: horseSwordsman_0
+      name: horseSwordsmanStand_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 98
-        width: 336
-        height: 336
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 25fb291dd8a2e9fb0800000000000000
-      internalID: -4639223777550221486
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: horseSwordsman_1
-      rect:
-        serializedVersion: 2
-        x: 361
+        x: 0
         y: 100
         width: 336
         height: 336
@@ -152,17 +130,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4ec5ee2adc5ced5e0800000000000000
-      internalID: -1882850107201790748
+      spriteID: b35cdbdf6d4762190800000000000000
+      internalID: -7987568422366100165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: horseSwordsman_2
+      name: horseSwordsmanStand_1
       rect:
         serializedVersion: 2
-        x: 697
+        x: 336
         y: 100
         width: 336
         height: 336
@@ -174,17 +152,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f272deb397e4922c0800000000000000
-      internalID: -4455944073702987985
+      spriteID: 1155e6f7fd4306390800000000000000
+      internalID: -7827198017849633519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: horseSwordsman_3
+      name: horseSwordsmanStand_2
       rect:
         serializedVersion: 2
-        x: 1033
+        x: 672
         y: 100
         width: 336
         height: 336
@@ -196,17 +174,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d8b3541e1669562e0800000000000000
-      internalID: -2133133501354656883
+      spriteID: c6a9ebf0c53aa9230800000000000000
+      internalID: 3646406464106306156
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: horseSwordsman_4
+      name: horseSwordsmanStand_3
       rect:
         serializedVersion: 2
-        x: 1369
+        x: 1008
         y: 100
         width: 336
         height: 336
@@ -218,17 +196,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2fe41a11ffa9dd5c0800000000000000
-      internalID: -4189021658081571086
+      spriteID: acf10621d36ad55b0800000000000000
+      internalID: -5377959598778998838
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: horseSwordsman_5
+      name: horseSwordsmanStand_4
       rect:
         serializedVersion: 2
-        x: 1705
+        x: 1344
         y: 100
         width: 336
         height: 336
@@ -240,8 +218,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 596a91a6a703ee750800000000000000
-      internalID: 6336055028081075861
+      spriteID: 3276ec11d73de9300800000000000000
+      internalID: 260878362557179683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: horseSwordsmanStand_5
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 100
+        width: 336
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45537cd158dcaba20800000000000000
+      internalID: 3078999266875094356
       vertices: []
       indices: 
       edges: []
@@ -250,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 2062fdc440fe2b24199ae0df6e384756
+    spriteID: 7ff37ae40d3ad684d9e4542f3cfcf116
     internalID: 0
     vertices: []
     indices: 
@@ -260,12 +260,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      horseSwordsman_0: -4639223777550221486
-      horseSwordsman_1: -1882850107201790748
-      horseSwordsman_2: -4455944073702987985
-      horseSwordsman_3: -2133133501354656883
-      horseSwordsman_4: -4189021658081571086
-      horseSwordsman_5: 6336055028081075861
+      horseSwordsmanStand_0: -7987568422366100165
+      horseSwordsmanStand_1: -7827198017849633519
+      horseSwordsmanStand_2: 3646406464106306156
+      horseSwordsmanStand_3: -5377959598778998838
+      horseSwordsmanStand_4: 260878362557179683
+      horseSwordsmanStand_5: 3078999266875094356
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
