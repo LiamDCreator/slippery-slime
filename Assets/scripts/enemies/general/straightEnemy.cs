@@ -10,19 +10,22 @@ public class straightEnemy : MonoBehaviour
     [SerializeField] private bool doesEnemyChangeDirection;
     [SerializeField] private float changeDirectionMinimunInterval;
     [SerializeField] private float changeDirectionMaximumInterval;
+    [SerializeField] private float changeBackDirectionMinimunInterval;
+    [SerializeField] private float changeBackDirectionMaximumInterval;
     [Header("Stand still")]
-
     [SerializeField] private bool doesEnemyStandStill;
-
-
     [SerializeField] private float minimumWalkTime;
     [SerializeField] private float maximumwalktime;
     [SerializeField] private float minimumstandStillTime;
     [SerializeField] private float maximumStandStillTime;
+
     private bool movingRight = true;
+    private Animator animator;
 
     void Start()
     {
+        animator = GetComponent<Animator>();
+
         // Rotate the enemy to face the correct direction based on its spawn position
         if (transform.position.x > 0)
         {
@@ -51,13 +54,19 @@ public class straightEnemy : MonoBehaviour
         // Move the enemy forward based on its current rotation
         transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
 
+        // Set xVelocity for the blend tree (1 for walking, 0 for idle)
+        if (animator != null)
+        {
+            float xVelocity = Mathf.Abs(moveSpeed) > 0.01f ? 1f : 0f;
+            animator.SetFloat("xVelocity", xVelocity);
+        }
+
         // Destroy the enemy if it moves out of bounds
         if (transform.position.x < -30 || transform.position.x > 30)
         {
             Destroy(gameObject);
         }
     }
-
 
     private IEnumerator ChangeDirectionRoutine()
     {
@@ -69,6 +78,13 @@ public class straightEnemy : MonoBehaviour
             movingRight = !movingRight;
             // Flip the enemy visually
             transform.rotation = Quaternion.Euler(0, movingRight ? 0 : 180, 0);
+
+            float waitTime2 = Random.Range(changeBackDirectionMinimunInterval, changeBackDirectionMaximumInterval);
+            yield return new WaitForSeconds(waitTime2);
+            movingRight = !movingRight;
+            // Flip the enemy visually
+            transform.rotation = Quaternion.Euler(0, movingRight ? 0 : 180, 0);
+
         }
     }
     private IEnumerator StandStillRoutine()
