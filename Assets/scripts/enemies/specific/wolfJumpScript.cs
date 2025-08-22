@@ -28,6 +28,16 @@ public class wolfJumpScript : MonoBehaviour
 
         StartCoroutine(JumpRoutine());
     }
+    void OnEnable()
+    {
+        StartCoroutine(JumpRoutine());
+    }
+    void OnDisable()
+    {
+        StopAllCoroutines();
+        spriteRenderer.color = originalColor;
+
+    }
 
     private IEnumerator JumpRoutine()
     {
@@ -37,19 +47,15 @@ public class wolfJumpScript : MonoBehaviour
             yield return new WaitForSeconds(jumpRate - jumpDelay);
 
             // Check if the wolf is fighting before preparing to jump
-            if (!EnemyBase.isFighting)
-            {
-                prepareJump();
 
-                // Wait for the jump delay
-                yield return new WaitForSeconds(jumpDelay);
+            prepareJump();
 
-                // Jump only if not fighting
-                if (!EnemyBase.isFighting)
-                {
-                    jump();
-                }
-            }
+            // Wait for the jump delay
+            yield return new WaitForSeconds(jumpDelay);
+
+
+            jump();
+
 
             // Reset the jump rate for the next jump
             jumpRate = Random.Range(minimumJumpRate, maximumJumpRate);

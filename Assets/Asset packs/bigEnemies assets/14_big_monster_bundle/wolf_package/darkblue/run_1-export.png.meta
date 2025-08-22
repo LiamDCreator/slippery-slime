@@ -1,13 +1,31 @@
 fileFormatVersion: 2
-guid: cdf97a5b96304d04abb637ca070e582b
+guid: 6c88a8d84cdfc894a8d4479ce8d01a36
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2632873553030453234
-    second: FinalSprites slippery slime_0
+      213: -7487611743824799565
+    second: run_1-export_0
   - first:
-      213: -7214018657693851232
-    second: FinalSprites slippery slime_1
+      213: -8024798420269204669
+    second: run_1-export_1
+  - first:
+      213: 7308899701734247697
+    second: run_1-export_2
+  - first:
+      213: 5854104736035183452
+    second: run_1-export_3
+  - first:
+      213: -3942890410384599640
+    second: run_1-export_4
+  - first:
+      213: 4114644445497247114
+    second: run_1-export_5
+  - first:
+      213: -3744227333269424813
+    second: run_1-export_6
+  - first:
+      213: 2538050457574831894
+    second: run_1-export_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +121,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FinalSprites slippery slime_0
+      name: run_1-export_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 1120
-        width: 80
-        height: 55
+        x: 56
+        y: 71
+        width: 209
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +136,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f796e20c88d98420800000000000000
-      internalID: 2632873553030453234
+      spriteID: 3b897414ac8a61890800000000000000
+      internalID: -7487611743824799565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FinalSprites slippery slime_1
+      name: run_1-export_1
       rect:
         serializedVersion: 2
-        x: 160
-        y: 1120
-        width: 90
-        height: 105
+        x: 305
+        y: 71
+        width: 206
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,19 +158,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a12e199048a2eb90800000000000000
-      internalID: -7214018657693851232
+      spriteID: 34bfcbd9a5032a090800000000000000
+      internalID: -8024798420269204669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FinalSprites slippery slime_2
+      name: run_1-export_2
       rect:
         serializedVersion: 2
-        x: 320
-        y: 1120
-        width: 80
+        x: 539
+        y: 71
+        width: 206
         height: 95
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -160,186 +178,120 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b6210c8ddc709d445bbd5d4e714faa58
-      internalID: 1252738644
+      spriteID: 11d04d4fd8d6e6560800000000000000
+      internalID: 7308899701734247697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FinalSprites slippery slime_3
+      name: run_1-export_3
       rect:
         serializedVersion: 2
-        x: 480
-        y: 1120
-        width: 100
-        height: 155
+        x: 794
+        y: 71
+        width: 191
+        height: 101
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ee52e8f66cf8e0e4094b2eb91980da9f
-      internalID: 964627345
+      spriteID: c5b1f45bd35fd3150800000000000000
+      internalID: 5854104736035183452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FinalSprites slippery slime_4
+      name: run_1-export_4
       rect:
         serializedVersion: 2
-        x: 640
-        y: 1120
-        width: 90
-        height: 145
+        x: 1040
+        y: 71
+        width: 185
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c54d78107f098694c98200399d56831d
-      internalID: 768093182
+      spriteID: 8a55bb4ef0a0849c0800000000000000
+      internalID: -3942890410384599640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FinalSprites slippery slime_5
+      name: run_1-export_5
       rect:
         serializedVersion: 2
-        x: 800
-        y: 1115
-        width: 100
-        height: 165
+        x: 1271
+        y: 71
+        width: 194
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: fb24cad0b0d79b6448c696c18abf175a
-      internalID: 450204676
+      spriteID: a85c5e6a2572a1930800000000000000
+      internalID: 4114644445497247114
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FinalSprites slippery slime_6
+      name: run_1-export_6
       rect:
         serializedVersion: 2
-        x: 960
-        y: 1120
-        width: 90
-        height: 155
+        x: 1508
+        y: 71
+        width: 197
+        height: 95
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 46066a7726871c94fbadfe2ab4476866
-      internalID: -2084058234
+      spriteID: 355fa220415d90cc0800000000000000
+      internalID: -3744227333269424813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FinalSprites slippery slime_7
+      name: run_1-export_7
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 1115
-        width: 100
-        height: 160
+        x: 1736
+        y: 71
+        width: 209
+        height: 98
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: fb90c7921b524ab43ae24f773a99022e
-      internalID: 1831109318
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FinalSprites slippery slime_8
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 880
-        width: 90
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f93dea5f96600249a906bd21aa5c1e5
-      internalID: 1828358358
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FinalSprites slippery slime_9
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 880
-        width: 140
-        height: 195
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8535cc6a40a378647b255ea930750246
-      internalID: -618927300
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FinalSprites slippery slime_10
-      rect:
-        serializedVersion: 2
-        x: 350
-        y: 960
-        width: 95
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe41ceaaf5d55ee4fab1111272c82b10
-      internalID: -1897045088
+      spriteID: 617f3c9a177f83320800000000000000
+      internalID: 2538050457574831894
       vertices: []
       indices: 
       edges: []
@@ -348,7 +300,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: cb2adc25d4b99cf4098aed808261eb48
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -357,18 +309,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      FinalSprites slippery slime_0: 2632873553030453234
-      FinalSprites slippery slime_1: -7214018657693851232
-      FinalSprites slippery slime_10: -1897045088
-      FinalSprites slippery slime_2: 1252738644
-      FinalSprites slippery slime_3: 964627345
-      FinalSprites slippery slime_4: 768093182
-      FinalSprites slippery slime_5: 450204676
-      FinalSprites slippery slime_6: -2084058234
-      FinalSprites slippery slime_7: 1831109318
-      FinalSprites slippery slime_8: 1828358358
-      FinalSprites slippery slime_9: -618927300
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
