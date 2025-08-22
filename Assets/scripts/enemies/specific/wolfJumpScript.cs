@@ -15,7 +15,8 @@ public class wolfJumpScript : MonoBehaviour
     private Color originalColor; // To store the original color of the GameObject
     private SpriteRenderer spriteRenderer; // Reference to the SpriteRenderer
 
-    void Start()
+
+    void OnEnable()
     {
         jumpRate = Random.Range(minimumJumpRate, maximumJumpRate);
         rb = GetComponent<Rigidbody2D>();
@@ -27,10 +28,7 @@ public class wolfJumpScript : MonoBehaviour
         }
 
         StartCoroutine(JumpRoutine());
-    }
-    void OnEnable()
-    {
-        StartCoroutine(JumpRoutine());
+
     }
     void OnDisable()
     {

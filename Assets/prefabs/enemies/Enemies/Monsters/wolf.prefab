@@ -168,8 +168,8 @@ MonoBehaviour:
   EnemyBase: {fileID: 1576439458077259989}
   jumpDelay: 0.5
   jumpForce: 0.7
-  minimumJumpRate: 2
-  maximumJumpRate: 5
+  minimumJumpRate: 3
+  maximumJumpRate: 6
   prepareJumpColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!50 &829605089285899483
 Rigidbody2D:
