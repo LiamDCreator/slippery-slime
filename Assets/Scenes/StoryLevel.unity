@@ -4378,78 +4378,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnableGroundObjects:
-  - prefab: {fileID: 119039974993335730, guid: 397d920a77e75cf4f91673d933ec6789, type: 3}
-    weight: 10
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 5964070195745125305, guid: c0064cc5dba3cc44bae63644cbbd3afe, type: 3}
-    weight: 10
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 6100478626600388815, guid: 3e10e8baec91d0a4ca0477e3b7fd635a, type: 3}
-    weight: 10
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 3356117535181166107, guid: 90b1bc7ee69d6444c83bf3392da86fe4, type: 3}
-    weight: 5
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 3749726628618102354, guid: e276fbb5840ec774bb6925849ea34f35, type: 3}
-    weight: 40
-    weightIncrease: -1
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 190817096929975604, guid: c2928e6ac5c494b4481c951d8e842697, type: 3}
-    weight: 5
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 7469807926748904113, guid: 573fc4e6dafab084283f47f9e4c83017, type: 3}
-    weight: 10
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 323096981108658999, guid: 0677e06db6e550948a4a2ae42006a4c5, type: 3}
-    weight: 30
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 2502747054008029787, guid: cf5d110be9d82c441884dd17c508c7bd, type: 3}
-    weight: 10
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 841631003552574522, guid: 56e3b732c78a487409e40c55e8edd4c2, type: 3}
-    weight: 10
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
+  - {fileID: 323096981108658999, guid: 0677e06db6e550948a4a2ae42006a4c5, type: 3}
+  - {fileID: 119039974993335730, guid: 397d920a77e75cf4f91673d933ec6789, type: 3}
+  - {fileID: 3356117535181166107, guid: 90b1bc7ee69d6444c83bf3392da86fe4, type: 3}
+  - {fileID: 2502747054008029787, guid: cf5d110be9d82c441884dd17c508c7bd, type: 3}
+  - {fileID: 3749726628618102354, guid: e276fbb5840ec774bb6925849ea34f35, type: 3}
+  - {fileID: 7469807926748904113, guid: 573fc4e6dafab084283f47f9e4c83017, type: 3}
+  - {fileID: 841631003552574522, guid: 56e3b732c78a487409e40c55e8edd4c2, type: 3}
+  - {fileID: 5964070195745125305, guid: c0064cc5dba3cc44bae63644cbbd3afe, type: 3}
+  - {fileID: 6100478626600388815, guid: 3e10e8baec91d0a4ca0477e3b7fd635a, type: 3}
   spawnableWaves:
-  - prefab: {fileID: 0}
-    weight: 1
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 0}
-    weight: 1
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
+  - {fileID: 1633289444922064386, guid: 4a538399ca74491489ddfed2bd9484ff, type: 3}
+  - {fileID: 5777922569453727462, guid: 8102ceb086fe52545add87a7adbaab2e, type: 3}
   spawnableFlyingObjects:
-  - prefab: {fileID: 0}
-    weight: 1
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 0}
-    weight: 1
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
+  - {fileID: 5293359862438330701, guid: 958c9864422b8d845aab5cfd02decc1f, type: 3}
+  - {fileID: 2685553734728546779, guid: bd16595b38c4c114e86c53bb6c882c10, type: 3}
   groundSpawnRate: 6
   minGroundSpawnRate: 4
   groundSpawnRateDecrease: 0.2
@@ -4459,9 +4402,8 @@ MonoBehaviour:
   pointsBeforeWaves: 0
   spawnWaveChance: 0
   spawnWaveNumber: 0
-  spawnWaveChanceIncrease: 10
-  spawnWaveChanceDecrease: 50
-  minEntryWeight: 0.01
+  spawnWaveChanceIncrease: 0
+  spawnWaveChanceDecrease: 0
 --- !u!4 &1648974252
 Transform:
   m_ObjectHideFlags: 0
@@ -4896,78 +4838,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnableGroundObjects:
-  - prefab: {fileID: 119039974993335730, guid: 397d920a77e75cf4f91673d933ec6789, type: 3}
-    weight: 10
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 5964070195745125305, guid: c0064cc5dba3cc44bae63644cbbd3afe, type: 3}
-    weight: 10
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 6100478626600388815, guid: 3e10e8baec91d0a4ca0477e3b7fd635a, type: 3}
-    weight: 10
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 3356117535181166107, guid: 90b1bc7ee69d6444c83bf3392da86fe4, type: 3}
-    weight: 5
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 3749726628618102354, guid: e276fbb5840ec774bb6925849ea34f35, type: 3}
-    weight: 5000
-    weightIncrease: -100
-    weightMinimum: 10
-    weightMaximum: 5000
-  - prefab: {fileID: 190817096929975604, guid: c2928e6ac5c494b4481c951d8e842697, type: 3}
-    weight: 5
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 7469807926748904113, guid: 573fc4e6dafab084283f47f9e4c83017, type: 3}
-    weight: 10
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 323096981108658999, guid: 0677e06db6e550948a4a2ae42006a4c5, type: 3}
-    weight: 30
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 2502747054008029787, guid: cf5d110be9d82c441884dd17c508c7bd, type: 3}
-    weight: 10
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 841631003552574522, guid: 56e3b732c78a487409e40c55e8edd4c2, type: 3}
-    weight: 10
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
+  - {fileID: 323096981108658999, guid: 0677e06db6e550948a4a2ae42006a4c5, type: 3}
+  - {fileID: 119039974993335730, guid: 397d920a77e75cf4f91673d933ec6789, type: 3}
+  - {fileID: 3356117535181166107, guid: 90b1bc7ee69d6444c83bf3392da86fe4, type: 3}
+  - {fileID: 2502747054008029787, guid: cf5d110be9d82c441884dd17c508c7bd, type: 3}
+  - {fileID: 3749726628618102354, guid: e276fbb5840ec774bb6925849ea34f35, type: 3}
+  - {fileID: 7469807926748904113, guid: 573fc4e6dafab084283f47f9e4c83017, type: 3}
+  - {fileID: 841631003552574522, guid: 56e3b732c78a487409e40c55e8edd4c2, type: 3}
+  - {fileID: 5964070195745125305, guid: c0064cc5dba3cc44bae63644cbbd3afe, type: 3}
+  - {fileID: 6100478626600388815, guid: 3e10e8baec91d0a4ca0477e3b7fd635a, type: 3}
   spawnableWaves:
-  - prefab: {fileID: 0}
-    weight: 1
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 0}
-    weight: 1
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
+  - {fileID: 1633289444922064386, guid: 4a538399ca74491489ddfed2bd9484ff, type: 3}
+  - {fileID: 5777922569453727462, guid: 8102ceb086fe52545add87a7adbaab2e, type: 3}
   spawnableFlyingObjects:
-  - prefab: {fileID: 0}
-    weight: 1
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
-  - prefab: {fileID: 0}
-    weight: 1
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
+  - {fileID: 5293359862438330701, guid: 958c9864422b8d845aab5cfd02decc1f, type: 3}
+  - {fileID: 2685553734728546779, guid: bd16595b38c4c114e86c53bb6c882c10, type: 3}
   groundSpawnRate: 6
   minGroundSpawnRate: 4
   groundSpawnRateDecrease: 0.2
@@ -4979,7 +4864,6 @@ MonoBehaviour:
   spawnWaveNumber: 0
   spawnWaveChanceIncrease: 10
   spawnWaveChanceDecrease: 50
-  minEntryWeight: 0.01
 --- !u!4 &1859295027
 Transform:
   m_ObjectHideFlags: 0
