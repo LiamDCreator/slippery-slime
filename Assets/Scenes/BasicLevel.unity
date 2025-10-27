@@ -4403,11 +4403,6 @@ MonoBehaviour:
     weightIncrease: -1
     weightMinimum: 0.01
     weightMaximum: 10
-  - prefab: {fileID: 190817096929975604, guid: c2928e6ac5c494b4481c951d8e842697, type: 3}
-    weight: 5
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
   - prefab: {fileID: 7469807926748904113, guid: 573fc4e6dafab084283f47f9e4c83017, type: 3}
     weight: 10
     weightIncrease: 0
@@ -4439,6 +4434,12 @@ MonoBehaviour:
     weightIncrease: 0
     weightMinimum: 0.01
     weightMaximum: 10
+  spawnableEvents:
+  - prefab: {fileID: 190817096929975604, guid: c2928e6ac5c494b4481c951d8e842697, type: 3}
+    weight: 10
+    weightIncrease: 0
+    weightMinimum: 0
+    weightMaximum: 0
   spawnableFlyingObjects:
   - prefab: {fileID: 0}
     weight: 1
@@ -4457,11 +4458,21 @@ MonoBehaviour:
   minFlyingSpawnRate: 6
   flyingSpawnRateDecrease: 0.2
   pointsBeforeWaves: 0
-  spawnWaveChance: 0
-  spawnWaveNumber: 0
-  spawnWaveChanceIncrease: 10
-  spawnWaveChanceDecrease: 50
+  pointsBeforeEvents: 0
+  spawnGroundChance: 99
+  spawnGroundChangeChance: -3
+  spawnGroundMinChance: 0
+  spawnGroundMaxChance: 100
+  spawnWaveChance: 1
+  spawnWaveChangeChance: 2
+  spawnWaveMinChance: 0
+  spawnWaveMaxChance: 100
+  spawnEventChance: 1
+  spawnEventChangeChance: 1
+  spawnEventMinChance: 0
+  spawnEventMaxChance: 100
   minEntryWeight: 0.01
+  gameManager: {fileID: 968664367}
 --- !u!4 &1648974252
 Transform:
   m_ObjectHideFlags: 0
@@ -4921,11 +4932,6 @@ MonoBehaviour:
     weightIncrease: -100
     weightMinimum: 10
     weightMaximum: 5000
-  - prefab: {fileID: 190817096929975604, guid: c2928e6ac5c494b4481c951d8e842697, type: 3}
-    weight: 5
-    weightIncrease: 0
-    weightMinimum: 0.01
-    weightMaximum: 10
   - prefab: {fileID: 7469807926748904113, guid: 573fc4e6dafab084283f47f9e4c83017, type: 3}
     weight: 10
     weightIncrease: 0
@@ -4947,16 +4953,22 @@ MonoBehaviour:
     weightMinimum: 0.01
     weightMaximum: 10
   spawnableWaves:
-  - prefab: {fileID: 0}
-    weight: 1
+  - prefab: {fileID: 1633289444922064386, guid: 4a538399ca74491489ddfed2bd9484ff, type: 3}
+    weight: 10
     weightIncrease: 0
     weightMinimum: 0.01
     weightMaximum: 10
-  - prefab: {fileID: 0}
-    weight: 1
+  - prefab: {fileID: 5777922569453727462, guid: 8102ceb086fe52545add87a7adbaab2e, type: 3}
+    weight: 10
     weightIncrease: 0
     weightMinimum: 0.01
     weightMaximum: 10
+  spawnableEvents:
+  - prefab: {fileID: 190817096929975604, guid: c2928e6ac5c494b4481c951d8e842697, type: 3}
+    weight: 10
+    weightIncrease: 0
+    weightMinimum: 0
+    weightMaximum: 0
   spawnableFlyingObjects:
   - prefab: {fileID: 0}
     weight: 1
@@ -4975,11 +4987,21 @@ MonoBehaviour:
   minFlyingSpawnRate: 6
   flyingSpawnRateDecrease: 0.2
   pointsBeforeWaves: 0
-  spawnWaveChance: 0
-  spawnWaveNumber: 0
-  spawnWaveChanceIncrease: 10
-  spawnWaveChanceDecrease: 50
+  pointsBeforeEvents: 5
+  spawnGroundChance: 1
+  spawnGroundChangeChance: 0
+  spawnGroundMinChance: 0
+  spawnGroundMaxChance: 100
+  spawnWaveChance: 100
+  spawnWaveChangeChance: 0
+  spawnWaveMinChance: 0
+  spawnWaveMaxChance: 100
+  spawnEventChance: 98
+  spawnEventChangeChance: 1
+  spawnEventMinChance: 0
+  spawnEventMaxChance: 100
   minEntryWeight: 0.01
+  gameManager: {fileID: 968664367}
 --- !u!4 &1859295027
 Transform:
   m_ObjectHideFlags: 0

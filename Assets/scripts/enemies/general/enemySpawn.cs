@@ -23,6 +23,7 @@ public class enemySpawn : MonoBehaviour
     [Header("Spawnable Objects")]
     [SerializeField] private SpawnableEntry[] spawnableGroundObjects;
     [SerializeField] private SpawnableEntry[] spawnableWaves;
+    [SerializeField] private SpawnableEntry[] spawnableEvents;
     [SerializeField] private SpawnableEntry[] spawnableFlyingObjects;
 
     [Header("Ground")]
@@ -35,16 +36,43 @@ public class enemySpawn : MonoBehaviour
     [SerializeField] private float minFlyingSpawnRate = 0.5f;
     [SerializeField] private float flyingSpawnRateDecrease = 0.01f;
 
-    [Header("Waves")]
-    [SerializeField] private int pointsBeforeWaves;
-    [SerializeField] private int spawnWaveChance;
-    [SerializeField] private int spawnWaveNumber;
-    [SerializeField] private int spawnWaveChanceIncrease;
-    [SerializeField] private int spawnWaveChanceDecrease;
+    [Header("Waves / Events gating")]
+    [SerializeField] private int pointsBeforeWaves = 0;
+    [SerializeField] private int pointsBeforeEvents = 0;
+
+    [Header("Spawn Ground Chances ")]
+    [Tooltip("Chance (0-100) for ground spawn.")]
+    [SerializeField] private int spawnGroundChance = 60;
+    [Tooltip("Per-spawn change applied to ground chance (can be negative).")]
+    [SerializeField] private int spawnGroundChangeChance = -3;
+    [SerializeField] private int spawnGroundMinChance = 0;
+    [SerializeField] private int spawnGroundMaxChance = 100;
+    [Header("Spawn Wave Chances ")]
+    [Tooltip("Chance (0-100) for wave spawn.")]
+    [SerializeField] private int spawnWaveChance = 30;
+    [Tooltip("Per-spawn change applied to wave chance (can be negative).")]
+    [SerializeField] private int spawnWaveChangeChance = 2;
+    [SerializeField] private int spawnWaveMinChance = 0;
+    [SerializeField] private int spawnWaveMaxChance = 100;
+    [Header("Spawn Event Chances ")]
+
+    [SerializeField] private int spawnEventChance = 10;
+    [Tooltip("Per-spawn change applied to event chance (can be negative).")]
+    [SerializeField] private int spawnEventChangeChance = 1;
+    [SerializeField] private int spawnEventMinChance = 0;
+    [SerializeField] private int spawnEventMaxChance = 100;
+
+
+
+
 
     [Header("Weight control")]
     [Tooltip("Global minimum weight any entry can have (prevents entries dropping to zero and disappearing).")]
     [SerializeField] private float minEntryWeight = 0.01f;
+
+    [Header("References")]
+    [Tooltip("Optional: assign a points source so gating uses player progress. If left empty, gating uses the pointsBefore* fields only (<=0 means allowed immediately).")]
+    [SerializeField] private gameManager gameManager; // optional, set in inspector if available
 
     void Start()
     {
@@ -56,33 +84,60 @@ public class enemySpawn : MonoBehaviour
     {
         while (true)
         {
-            spawnWaveNumber = Random.Range(0, 100);
-            if (spawnWaveNumber > spawnWaveChance)
-            {
-                SpawnGroundObject();
+            // roll 0..(total-1) where total is sum of effective chances
+            // determine whether waves/events are allowed separately
+            bool wavesAllowed = pointsBeforeWaves <= 0 || (gameManager != null && gameManager.score >= pointsBeforeWaves);
+            bool eventsAllowed = pointsBeforeEvents <= 0 || (gameManager != null && gameManager.score >= pointsBeforeEvents);
 
-                // Slightly adjust weights for ground entries after each ground spawn
+            int effectiveEventChance = eventsAllowed ? spawnEventChance : 0;
+            int effectiveWaveChance = wavesAllowed ? spawnWaveChance : 0;
+            int effectiveGroundChance = spawnGroundChance; // ground always allowed
+
+            int sumEffective = Mathf.Clamp(effectiveEventChance, 0, 100) + Mathf.Clamp(effectiveWaveChance, 0, 100) + Mathf.Clamp(effectiveGroundChance, 0, 100);
+
+            if (sumEffective <= 0)
+            {
+                // fallback to ground spawn if no effective chances
+                SpawnGroundObject();
                 UpdateWeights(spawnableGroundObjects);
 
-                yield return new WaitForSeconds(groundSpawnRate);
-                groundSpawnRate = Mathf.Max(minGroundSpawnRate, groundSpawnRate - groundSpawnRateDecrease);
-                spawnWaveChance += spawnWaveChanceIncrease;
+                // still apply per-spawn deltas so chances evolve toward allowed ranges
+                ApplySpawnChanceDeltas();
             }
             else
             {
-                SpawnWaves();
+                int roll = Random.Range(0, sumEffective);
+                if (roll < effectiveEventChance)
+                {
+                    SpawnEvent();
+                    UpdateWeights(spawnableEvents);
+                }
+                else if (roll < effectiveEventChance + effectiveWaveChance)
+                {
+                    SpawnWaves();
+                    UpdateWeights(spawnableWaves);
+                }
+                else
+                {
+                    SpawnGroundObject();
+                    UpdateWeights(spawnableGroundObjects);
+                }
 
-                // Slightly adjust wave entry weights after a wave spawn
-                UpdateWeights(spawnableWaves);
-
-                yield return new WaitForSeconds(groundSpawnRate);
-                groundSpawnRate = Mathf.Max(minGroundSpawnRate, groundSpawnRate - groundSpawnRateDecrease);
-                spawnWaveChance -= spawnWaveChanceDecrease;
+                // After any spawn, apply the configured deltas to all three chances and clamp
+                ApplySpawnChanceDeltas();
             }
 
-            // Keep spawnWaveChance in a safe range
-            spawnWaveChance = Mathf.Clamp(spawnWaveChance, 0, 99);
+            // Wait and decay spawn rate
+            yield return new WaitForSeconds(groundSpawnRate);
+            groundSpawnRate = Mathf.Max(minGroundSpawnRate, groundSpawnRate - groundSpawnRateDecrease);
         }
+    }
+
+    private void ApplySpawnChanceDeltas()
+    {
+        spawnEventChance = Mathf.Clamp(spawnEventChance + spawnEventChangeChance, spawnEventMinChance, spawnEventMaxChance);
+        spawnWaveChance = Mathf.Clamp(spawnWaveChance + spawnWaveChangeChance, spawnWaveMinChance, spawnWaveMaxChance);
+        spawnGroundChance = Mathf.Clamp(spawnGroundChance + spawnGroundChangeChance, spawnGroundMinChance, spawnGroundMaxChance);
     }
 
     private IEnumerator FlyingSpawnRoutine()
@@ -90,8 +145,6 @@ public class enemySpawn : MonoBehaviour
         while (true)
         {
             SpawnFlyingObject();
-
-            // Slightly adjust flying entries weights after each flying spawn
             UpdateWeights(spawnableFlyingObjects);
 
             yield return new WaitForSeconds(flyingSpawnRate);
@@ -106,12 +159,18 @@ public class enemySpawn : MonoBehaviour
 
     void SpawnWaves()
     {
+        // For multi-enemy waves you can call SpawnByWeight multiple times here
         SpawnByWeight(spawnableWaves);
     }
 
     void SpawnFlyingObject()
     {
         SpawnByWeight(spawnableFlyingObjects);
+    }
+
+    void SpawnEvent()
+    {
+        SpawnByWeight(spawnableEvents);
     }
 
     // Helper: choose an entry based on its weight and instantiate it at this transform
@@ -127,7 +186,7 @@ public class enemySpawn : MonoBehaviour
                 totalWeight += Mathf.Max(0f, entries[i].weight);
         }
 
-        // If all weights are zero or invalid, fallback to uniform random among valid prefabs
+        // Fallback to uniform pick if all weights are <= 0
         if (totalWeight <= 0f)
         {
             int tries = 0;
@@ -149,8 +208,7 @@ public class enemySpawn : MonoBehaviour
         for (int i = 0; i < entries.Length; i++)
         {
             var e = entries[i];
-            if (e == null || e.prefab == null)
-                continue;
+            if (e == null || e.prefab == null) continue;
 
             accum += Mathf.Max(0f, e.weight);
             if (r <= accum)
@@ -164,19 +222,15 @@ public class enemySpawn : MonoBehaviour
     // Update weights for a set of entries: apply weightIncrease and clamp between per-entry min and max
     private void UpdateWeights(SpawnableEntry[] entries)
     {
-        if (entries == null || entries.Length == 0)
-            return;
+        if (entries == null || entries.Length == 0) return;
 
         for (int i = 0; i < entries.Length; i++)
         {
             var e = entries[i];
-            if (e == null)
-                continue;
+            if (e == null) continue;
 
-            // Apply incremental change
             float newWeight = e.weight + e.weightIncrease;
 
-            // Determine per-entry min and max, ensure sensible ordering and enforce global minEntryWeight
             float perEntryMin = Mathf.Max(e.weightMinimum, minEntryWeight);
             float perEntryMax = Mathf.Max(e.weightMaximum, perEntryMin);
 
