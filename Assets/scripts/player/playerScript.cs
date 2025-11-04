@@ -1,3 +1,4 @@
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class playerScript : MonoBehaviour
@@ -5,7 +6,7 @@ public class playerScript : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded;
     private bool wasGrounded;
-    private bool canfastFall;
+    public bool canfastFall;
     public bool playerCanDie = true;
     public bool playerHasUnlimitedJumps = false;
     public int jumpsRemaining = 2;
@@ -17,6 +18,7 @@ public class playerScript : MonoBehaviour
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private gameOverScreenScript gameOverScreen;
     [SerializeField] private Animator animator;
+    public PlayerPowerUps PlayerPowerUps;
 
     void Start()
     {
@@ -46,6 +48,8 @@ public class playerScript : MonoBehaviour
         {
             jumpsRemaining = 2;
             canfastFall = true;
+            PlayerPowerUps.unlimitedJumpsParticles.Stop();
+
         }
     }
 

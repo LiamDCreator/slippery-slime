@@ -8,6 +8,8 @@ public class PlayerPowerUps : MonoBehaviour
     public gameManager gameManager;
     [SerializeField] private float starPowerDuration;
     [SerializeField] private float unlimitedJumpsPowerDuration;
+    public ParticleSystem starpowerParticles;
+    public ParticleSystem unlimitedJumpsParticles;
 
 
     public void UnlimitedJumpsPower()
@@ -22,8 +24,10 @@ public class PlayerPowerUps : MonoBehaviour
 
     private IEnumerator playerHasUnlimitedJumps()
     {
+        unlimitedJumpsParticles.Play();
         playerScript.jumpsRemaining = 100;
         playerScript.playerHasUnlimitedJumps = true;
+        playerScript.canfastFall = true;
         yield return new WaitForSeconds(unlimitedJumpsPowerDuration);
         playerScript.jumpsRemaining = 2;
         playerScript.playerHasUnlimitedJumps = false;
@@ -32,7 +36,7 @@ public class PlayerPowerUps : MonoBehaviour
     private IEnumerator playerHasStarPower()
     {
         playerScript.playerCanDie = false;
-
+        starpowerParticles.Play();
         yield return new WaitForSeconds(starPowerDuration);
         playerScript.playerCanDie = true;
         yield return null;
