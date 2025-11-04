@@ -19,7 +19,7 @@ public class playerScore : MonoBehaviour
             {
                 if (gameManager != null)
                 {
-                    gameManager.AddScore(1); // Increment the score via gameManager
+                    gameManager.AddScore(enemyScore.ScoreValue); // Use the enemy's score value
                 }
                 enemyScore.HasBeenScored = true; // Mark the enemy as scored
             }

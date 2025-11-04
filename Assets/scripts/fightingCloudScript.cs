@@ -11,10 +11,18 @@ public class fightingCloudScript : MonoBehaviour
     [SerializeField] private float TimeToFight = 0;
     [SerializeField] private float timeBetweenCombat = 0;
     private bool continueFight = true;
+    public EnemyScore cloudEnemyScore;
 
 
     void Start()
     {
+        // Get or add EnemyScore component
+        cloudEnemyScore = GetComponent<EnemyScore>();
+        if (cloudEnemyScore == null)
+        {
+            cloudEnemyScore = gameObject.AddComponent<EnemyScore>();
+        }
+
         StartCoroutine(fightingLogic());
     }
     void Update()
@@ -36,7 +44,25 @@ public class fightingCloudScript : MonoBehaviour
             totalHumanStrength += enemy.strength; // Update total immediately
         }
 
+        // Update the cloud's score value
+        UpdateCloudScoreValue();
+
         enemy.gameObject.SetActive(false);
+    }
+
+    private void UpdateCloudScoreValue()
+    {
+        if (cloudEnemyScore == null) return;
+
+        // Simply count the total number of enemies in both lists
+        int totalScore = monsters.Count + humans.Count;
+
+        // Update the cloud's score value using reflection to access the private field
+        var scoreField = typeof(EnemyScore).GetField("scoreValue", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        if (scoreField != null)
+        {
+            scoreField.SetValue(cloudEnemyScore, totalScore);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -91,6 +117,9 @@ public class fightingCloudScript : MonoBehaviour
                 toFaction.RemoveAt(i); // Remove from list immediately
             }
         }
+
+        // Update the cloud's score value after removing enemies
+        UpdateCloudScoreValue();
     }
 
     private void checkIfFactionDied()
