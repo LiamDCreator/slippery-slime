@@ -1,14 +1,14 @@
 using UnityEngine;
 using System.Collections;
 
-
 public class powerUpSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] spawnablePowerUps;
     [SerializeField] private float minimumSpawnrate;
     [SerializeField] private float maximumSpawnrate;
     [SerializeField] private float timeBeforeSpawn;
-
+    private float leftSpawnChance;
+    private float leftSpawnOffset;
 
     void Start()
     {
@@ -32,9 +32,17 @@ public class powerUpSpawner : MonoBehaviour
     {
         if (spawnablePowerUps.Length > 0)
         {
+            Vector3 spawnPos = transform.position;
+
+            // 50/50 chance to spawn at original position or 32 units to the right
+            if (Random.Range(0f, 1f) > 0.5f)
+            {
+                spawnPos.x += 32f;
+            }
+
             Instantiate(
                 spawnablePowerUps[Random.Range(0, spawnablePowerUps.Length)],
-                transform.position,
+                spawnPos,
                 transform.rotation
             );
         }

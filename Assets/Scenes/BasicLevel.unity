@@ -4357,7 +4357,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1648974252}
   - component: {fileID: 1648974251}
-  - component: {fileID: 1648974253}
   m_Layer: 0
   m_Name: EnemySpawnerRight
   m_TagString: Untagged
@@ -4372,7 +4371,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648974250}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43c032aa0c6765f47813e4e16a9f92f6, type: 3}
   m_Name: 
@@ -4488,24 +4487,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1648974253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1648974250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fa1b64b69dd1354c9679fad30052772, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnablePowerUps:
-  - {fileID: 1649854491270854904, guid: cb8deb634ed219c4dbe090649f7fce47, type: 3}
-  - {fileID: 9190701129890935143, guid: 24c875129fa0a664b92beae90fd018da, type: 3}
-  minimumSpawnrate: 30
-  maximumSpawnrate: 50
-  timeBeforeSpawn: 25
 --- !u!1 &1678279459
 GameObject:
   m_ObjectHideFlags: 0
@@ -4901,7 +4882,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859295025}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43c032aa0c6765f47813e4e16a9f92f6, type: 3}
   m_Name: 
@@ -4923,15 +4904,15 @@ MonoBehaviour:
     weightMinimum: 0.01
     weightMaximum: 10
   - prefab: {fileID: 3356117535181166107, guid: 90b1bc7ee69d6444c83bf3392da86fe4, type: 3}
-    weight: 5
+    weight: 10
     weightIncrease: 0
     weightMinimum: 0.01
     weightMaximum: 10
   - prefab: {fileID: 3749726628618102354, guid: e276fbb5840ec774bb6925849ea34f35, type: 3}
-    weight: 5000
-    weightIncrease: -100
-    weightMinimum: 10
-    weightMaximum: 5000
+    weight: 10
+    weightIncrease: 0
+    weightMinimum: 0
+    weightMaximum: 10
   - prefab: {fileID: 7469807926748904113, guid: 573fc4e6dafab084283f47f9e4c83017, type: 3}
     weight: 10
     weightIncrease: 0
@@ -5032,9 +5013,9 @@ MonoBehaviour:
   spawnablePowerUps:
   - {fileID: 1649854491270854904, guid: cb8deb634ed219c4dbe090649f7fce47, type: 3}
   - {fileID: 9190701129890935143, guid: 24c875129fa0a664b92beae90fd018da, type: 3}
-  minimumSpawnrate: 20
+  minimumSpawnrate: 10
   maximumSpawnrate: 40
-  timeBeforeSpawn: 10
+  timeBeforeSpawn: 5
 --- !u!1 &1936083166
 GameObject:
   m_ObjectHideFlags: 0
