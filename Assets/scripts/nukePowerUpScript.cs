@@ -6,6 +6,11 @@ public class nukePowerUpScript : MonoBehaviour
     public gameManager gameManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        // Find the gameManager in the scene
+        gameManager = FindFirstObjectByType<gameManager>();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
