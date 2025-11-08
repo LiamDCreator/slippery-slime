@@ -42,12 +42,13 @@ public class playerScript : MonoBehaviour
     {
         wasGrounded = isGrounded;
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundMask);
+        canfastFall = true;
 
         // Reset jumps only when landing
         if (!wasGrounded && isGrounded)
         {
             jumpsRemaining = 2;
-            canfastFall = true;
+
             PlayerPowerUps.unlimitedJumpsParticles.Stop();
 
         }
