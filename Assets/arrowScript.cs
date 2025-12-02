@@ -2,17 +2,34 @@ using UnityEngine;
 
 public class arrowScript : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    [SerializeField] private int arrowStrength;
 
+    private Rigidbody2D rb;
+    private Collider2D arrowCollider;
+    [SerializeField] private int arrowStrength;
     [SerializeField] private float moveSpeed;
+    [SerializeField] private float collisionDelay = 0.1f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        arrowCollider = GetComponent<Collider2D>();
 
+        // Disable collision initially
+        arrowCollider.enabled = false;
+
+        // Add force to move the arrow
         rb.AddForce(Vector2.right * moveSpeed, ForceMode2D.Impulse);
 
+        // Enable collision after delay
+        Invoke("EnableCollision", collisionDelay);
+    }
+
+    private void EnableCollision()
+    {
+        if (arrowCollider != null)
+        {
+            arrowCollider.enabled = true;
+        }
     }
 
     // Update is called once per frame

@@ -3,8 +3,10 @@ using System.Collections;
 
 public class archerScript : MonoBehaviour
 {
+    public straightEnemy straightEnemy;
     [SerializeField] private GameObject arrow;
     [SerializeField] private float shootRate;
+    [SerializeField] private float standStillTime;
     [SerializeField] private float minimumShootRate;
     [SerializeField] private float maximumShootRate;
 
@@ -25,16 +27,18 @@ public class archerScript : MonoBehaviour
     {
         while (true)
         {
-            // Wait for the prepare jump time
+
             yield return new WaitForSeconds(shootRate);
 
-            // Check if the wolf is fighting before preparing to jump
 
-            ShootArrow();
+            straightEnemy.moveSpeed = 0;
 
-            // Wait for the jump delay
 
             shootRate = Random.Range(minimumShootRate, maximumShootRate);
+
+            yield return new WaitForSeconds(standStillTime);
+            ShootArrow();
+            straightEnemy.moveSpeed = straightEnemy.originalmovespeed;
         }
     }
     private void ShootArrow()
